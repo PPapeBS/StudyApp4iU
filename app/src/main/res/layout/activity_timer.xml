@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Timer">
+
+    <LinearLayout
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name_Menu"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/headlineCourses"
+                android:layout_width="199dp"
+                android:layout_height="wrap_content"
+                android:text="@string/headlineTimer"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="134dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/iubhlogounterschrift" />
+    </LinearLayout>
+
+
+    <!--Kursauswahl-->
+
+    <Button
+        android:id="@+id/buttonselectCourse"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:backgroundTint="#4CAF50"
+        android:fontFamily="monospace"
+        android:onClick="onClickSelectCourse"
+        android:text="@string/buttonSelectCourse"
+        android:textSize="23sp"        />
+
+    <Button
+        android:id="@+id/buttonselectLesson"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:backgroundTint="#00BCD4"
+        android:fontFamily="monospace"
+        android:onClick="onClickSelectLesson"
+        android:text="@string/buttonSelectLessons"
+        android:textSize="23sp"        />
+
+
+
+    <Button
+        android:id="@+id/Button3"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:backgroundTint="#FFCA28"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:onClick="onClickTimerEnd"
+        android:text="@string/buttonEndLessons"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/viewTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/black"
+        android:textSize="56sp"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="187dp"
+                android:layout_height="92dp"
+                android:background="#00E676"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:onClick="onClickTimerStart"
+                android:text="@string/buttonTimerStart"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5" />
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="187dp"
+                android:layout_height="92dp"
+                android:background="#EF5350"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:onClick="onClickTimerStop"
+                android:text="@string/buttonTimerStop"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23sp" />
+    </RadioGroup>
+
+
+</LinearLayout>

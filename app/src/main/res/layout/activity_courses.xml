@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Courses">
+
+    <LinearLayout
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name_Menu"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/headlineCourses"
+                android:layout_width="199dp"
+                android:layout_height="wrap_content"
+                android:text="@string/headlineCourses"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="134dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/iubhlogounterschrift" />
+    </LinearLayout>
+
+
+    <!--Kursübersicht-->
+    <LinearLayout
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <!--->
+    ALTE KURSANZEIGE
+        <Button
+            android:id="@+id/buttonCourses1"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:backgroundTint="#009688"
+            android:fontFamily="monospace"
+            android:onClick="onClickButton"
+            android:text="TEMP:Kurs 1 BWL"
+            android:textSize="23sp"
+            android:textColor="@color/white"
+        />
+
+        <Button
+            android:id="@+id/buttonCourses2"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:backgroundTint="#009688"
+            android:fontFamily="monospace"
+            android:onClick="onClickButton"
+            android:text="TEMP:Kurs 2 Java"
+            android:textSize="23sp"
+            />
+
+        <Button
+            android:id="@+id/buttonCourses3"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:backgroundTint="#009688"
+            android:fontFamily="monospace"
+            android:onClick="onClickButton"
+            android:text="TEMP:Kurs 3 Mathe"
+            android:textSize="23sp"
+            />
+
+        <Button
+            android:id="@+id/buttonCourses4"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:backgroundTint="#009688"
+            android:fontFamily="monospace"
+            android:onClick="onClickButton"
+            android:text="TEMP:Kurs 4 Android"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            />
+    -->
+
+    <Spinner
+        android:id="@+id/spinnerCourses"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="#009688"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/buttonInfoCourse"
+            android:layout_width="187dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#7E57C2"
+            android:fontFamily="monospace"
+            android:onClick="onClickCourseInfo"
+            android:text="@string/headlineCoursesInfo"
+            android:textSize="20sp" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
+                <Button
+            android:id="@+id/buttonEditCourse"
+            android:layout_width="187dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#FFCA28"
+            android:fontFamily="monospace"
+            android:onClick="onClickCourseEdit"
+            android:text="@string/headlineCoursesEdit"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonAddCourse"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:backgroundTint="#009688"
+        android:fontFamily="monospace"
+        android:onClick="addCourse"
+        android:text="@string/buttonAddCourse"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
+    <ListView
+        android:id="@+id/listViewCourses"
+        android:layout_width="match_parent"
+        android:clickable="false"
+        android:layout_height="400dp"
+        android:background="#009688"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
+
+    />
+
+
+</LinearLayout>

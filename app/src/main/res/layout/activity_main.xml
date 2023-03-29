@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/headline"
+            android:layout_width="230dp"
+            android:layout_height="35dp"
+            android:text="@string/app_name_Menu"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/iubhlogonurlogo" />
+    </LinearLayout>
+
+
+    <!--Kursübersicht-->
+    <LinearLayout
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"></LinearLayout>
+
+    <!--Lerneinheiten-->
+    <Button
+        android:id="@+id/buttonCourses"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:backgroundTint="#009688"
+        android:fontFamily="monospace"
+        android:onClick="onClickCourses"
+        android:text="@string/buttonCourses"
+        android:textSize="23sp" />
+
+    <Button
+        android:id="@+id/buttonLesson"
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:backgroundTint="#00BCD4"
+        android:fontFamily="monospace"
+        android:onClick="onClickLesson"
+        android:text="@string/buttonLesson"
+        android:textSize="23sp"        />
+
+    <!--Timer-->
+    <Button
+        android:id="@+id/buttonTimer"
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:backgroundTint="#4CAF50"
+        android:fontFamily="monospace"
+        android:onClick="onClickTimer"
+        android:text="@string/buttonTimer"
+        android:textSize="23sp"
+        />
+
+    <!--Statistik-->
+    <Button
+        android:id="@+id/buttonStatistic"
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:backgroundTint="#E8EAF6"
+        android:fontFamily="monospace"
+        android:onClick="onClickButton"
+        android:text="@string/buttonStatistic"
+        android:textSize="23sp"
+        />
+
+    <!--Expoprt/Archiv-->
+    <Button
+        android:id="@+id/buttonArchive"
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:backgroundTint="#E8EAF6"
+        android:fontFamily="monospace"
+        android:onClick="onClickButton"
+        android:text="@string/buttonArchive"
+        android:textSize="23sp"
+        />
+
+    <!--Nutzerprofil-->
+    <Button
+        android:id="@+id/buttonProfil"
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:backgroundTint="#E8EAF6"
+        android:fontFamily="monospace"
+        android:onClick="onClickButton"
+        android:text="@string/buttonProfil"
+        android:textSize="23sp"        />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/version"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/developedBy"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/developedBy"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"></LinearLayout>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Switch" />
+
+
+</LinearLayout>

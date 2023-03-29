@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">StudyApp4iU</string>
+    <string name="app_name_Menu">Study App 4 (i) U</string>
+    <string name="version">V0.1</string>
+    <string name="developedBy">Entwickelt von: Philipp Pape</string>
+
+    <!--Benennung der Menus in der MainActivity    -->
+    <string name="buttonCourses">Kursübersicht</string>
+    <string name="buttonLesson">Lerneinheiten</string>
+    <string name="buttonTimer">Timer</string>
+    <string name="buttonStatistic">Statistik</string>
+    <string name="buttonArchive">Export/Archiv</string>
+    <string name="buttonProfil">Nutzerprofil</string>
+
+    <!--Ausgabe der nicht implementierten Buttons in der MainActivity    -->
+    <string name="buttonFunctionTemplates">Funktion nicht eingebaut</string>
+
+    <!--Überschriften in den drei Hauptmenus    -->
+    <string name="headlineCourses">Kursübersicht</string>
+    <string name="headlineCoursesEdit">Kurs bearbeiten</string>
+    <string name="headlineCoursesInfo">Kursinfos</string>
+    <string name="headlineLessons">Lerneinheiten</string>
+    <string name="headlineTimer">Timer</string>
+
+    <!--Text im Kursmenu    -->
+    <string name="buttonAddCourse">+ Neuen Kurs hinzufügen</string>
+    <string name="buttonDeletCourse">Kurs löschen</string>
+    <string name="buttonDeletCourse2">Kurs gelöschen</string>
+    <string name="buttonChanceCourse">Kurs speichern</string>
+    <string name="buttonChanceCourse2">Kurs gespeichert</string>
+
+    <string name="buttonCourse">Kurs</string>
+
+    <!--Text im Kursmenu editieren und Info    -->
+    <string name="textLineCourseNo">Nr.: </string>
+    <string name="textLineNameShort">Name kurz: </string>
+    <string name="textLineNameLong">Name lang: </string>
+    <string name="textLineIubhId">IU ID: </string>
+    <string name="textLineCourseSem">Plansemester: </string>
+
+    <!--Text im Lerneinheitenmenu    -->
+    <string name="buttonSelectCourse">Kurs auswählen</string>
+    <string name="requestSelectCourse">Bitte Kurs auswählen</string>
+    <string name="buttonAddLessons">+ Lerneinheit hinzufügen</string>
+    <string name="buttonModifyLessons">Lerneinheit verändern</string>
+    <string name="buttonDeletLessons">Lerneinheit löschen</string>
+    <string name="buttonAddLessons2">Lerneinheit hinzufügen </string>
+
+    <!--Text im Timermenu    -->
+    <string name="buttonSelectLessons">Lerneinheit auswählen</string>
+    <string name="requestSelectLessons">Bitte Lerneinheit auswählen</string>
+    <string name="buttonCreateLessons">Lerneinheit erstellen</string>
+    <string name="buttonEndLessons">Lerneinheit beenden</string>
+    <string name="buttonTimerStart">Start</string>
+    <string name="buttonTimerStop">Stop</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">StudyApp4iU</string>
+    <string name="app_name_Menu">Study App 4 (i) U</string>
+    <string name="version">V0.1</string>
+    <string name="developedBy">Developed by: Philipp Pape</string>
+
+    <!--Benennung der Menus in der MainActivity    -->
+    <string name="buttonCourses">Courses</string>
+    <string name="buttonLesson">Lessons</string>
+    <string name="buttonTimer">Timer</string>
+    <string name="buttonStatistic">Statistic</string>
+    <string name="buttonArchive">Archive</string>
+    <string name="buttonProfil">Userprofil</string>
+
+    <!--Ausgabe der nicht implementierten Buttons in der MainActivity    -->
+    <string name="buttonFunctionTemplates">Function not implemented</string>
+
+    <!--Überschriften in den drei Hauptmenus    -->
+    <string name="headlineCourses">Courses</string>
+    <string name="headlineCoursesEdit">Courses Edit</string>
+    <string name="headlineCoursesInfo">Courses Info</string>
+    <string name="headlineLessons">Lessons</string>
+    <string name="headlineTimer">Timer</string>
+
+
+    <!--Text im Kursmenu    -->
+    <string name="buttonAddCourse">+ Add new course</string>
+    <string name="buttonDeletCourse">Delete course</string>
+    <string name="buttonDeletCourse2">Course deleted</string>
+    <string name="buttonChanceCourse">save course</string>
+    <string name="buttonChanceCourse2">Course saved</string>
+    <string name="buttonCourse">Course </string>
+
+    <!--Text im Kursmenu editieren und Info    -->
+    <string name="textLineCourseNo">No.: </string>
+    <string name="textLineNameShort">Name short: </string>
+    <string name="textLineNameLong">Name long: </string>
+    <string name="textLineIubhId">IU ID: </string>
+    <string name="textLineCourseSem">Planned semester: </string>
+
+
+    <!--Text im Lerneinheitenmenu    -->
+    <string name="buttonSelectCourse">Select course</string>
+    <string name="requestSelectCourse">Please select course</string>
+    <string name="buttonAddLessons">+ Add lesson</string>
+    <string name="buttonModifyLessons">Modify lesson</string>
+    <string name="buttonDeletLessons">Delete lesson</string>
+    <string name="buttonAddLessons2">Add lesson</string>
+
+
+    <!--Text im Timermenu    -->
+    <string name="buttonSelectLessons">Select lesson</string>
+    <string name="requestSelectLessons">Please select lesson</string>
+    <string name="buttonCreateLessons">Create lesson</string>
+    <string name="buttonEndLessons">End lesson</string>
+    <string name="buttonTimerStart">start</string>
+    <string name="buttonTimerStop">stop</string>
+
+</resources>
