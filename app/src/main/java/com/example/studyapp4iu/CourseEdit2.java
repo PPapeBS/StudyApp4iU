@@ -52,7 +52,7 @@ public class CourseEdit2 extends AppCompatActivity {
 
 //LEGT ein neues Objekt
         Courses BWL= new Courses(8888, 5, "VERÄNDERT 12","VERÄNDERT in Recht","BREC01",1);
-        coursesInstanz.courseListeArray.add(BWL);
+        courseListeArray.add(BWL);
 
         // Ausgabe des Inhalts von courseListeArray
         Log.d("#####Debug#####", "Inhalt von courseListeArray in CoursesEdit2:" +"\n" + Arrays.toString(coursesInstanz.courseListeArray.toArray()));

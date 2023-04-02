@@ -21,17 +21,19 @@ import java.util.List;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputEditText;
+
+import org.w3c.dom.Text;
+
 public class CourseEdit extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_edit);
-    }
-
-        protected void onStart(Bundle savedInstanceState) {
 
 //Anzeige des Spinner aus Courses als ein String und durch Substring auseinandergenommen
+
         TextView textViewCours1 = (TextView) findViewById(R.id.editCourse1);
         int stelle = Courses.courseUebergabe.indexOf("#");
         textViewCours1.setText(Courses.courseUebergabe.substring(0, stelle));
@@ -84,9 +86,32 @@ public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
 //Buttonfunktions Kurs speichern,
     public void onClickChangeCourse (View button) {
 
+    for(int i = 0; i < Courses.courseListeArray.size() -1; i++) {
+        if(Courses.courseListeArray.get(i).toString().contains(Courses.courseUebergabe)) {
+            TextView textViewCours1 = (TextView) findViewById(R.id.editCourse1);
+            String courseNo = textViewCours1.getText().toString();
+            TextView textViewCours2 = (TextView) findViewById(R.id.editCourse2);
+            String courseNameShort =  textViewCours2.getText().toString();
+            TextView textViewCours3 = (TextView) findViewById(R.id.editCourse3);
+            String courseIubhId =  textViewCours3.getText().toString();
+            TextView textViewCours4 = (TextView) findViewById(R.id.editCourse4);
+            String courseSem = textViewCours4.getText().toString();
+            TextView textViewCours5 = (TextView) findViewById(R.id.editCourse5);
+            String courseNameLong = textViewCours5.getText().toString();
+            String courseID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-6,Courses.courseUebergabe.length());
+            Courses.courseListeArray.set(i,"Nr: "+courseNo+"# "+courseNameShort +"# IU:"+courseIubhId+ "# Sem:"+courseSem+"# " +courseNameLong+"# "+courseID+"# " );
 
+
+
+        }
+    }
+
+//KOPIE AUS COURSES JAVA
+        /*
+        return
+
+  */
 //Seitenwechsel Kurse Zurück, damit die Activity nicht zerstört wird wie beim zurück button
-
             Intent changeIntent = new Intent(CourseEdit.this, Courses.class);
             startActivity(changeIntent);
 

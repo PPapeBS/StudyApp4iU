@@ -85,7 +85,7 @@ public class Courses extends AppCompatActivity {
 
 
     //ArrayListe für die Kurse
-    public ArrayList courseListeArray = new ArrayList();
+    public static ArrayList courseListeArray = new ArrayList();
 
 
 
@@ -144,7 +144,7 @@ protected void onStart () {
   super.onStart();
 
 // Ausgabe des Inhalts von courseListeArray
-    Log.d("#####Debug#####", "Inhalt von courseListeArray in Courses:" +"\n" + Arrays.toString(courseListeArray.toArray()));
+    Log.d("#####Debug onStart#####", "Inhalt von courseListeArray in Courses:" +"\n" + Arrays.toString(courseListeArray.toArray()));
 
 
 
@@ -177,6 +177,9 @@ protected void onStart () {
 //FÜgt Matheobjekt der Liste hinzu
         courseListeArray.add(MATHE);
 
+// Ausgabe des Inhalts von courseListeArray
+        Log.d("#####Debug addCourse#####", "Inhalt von courseListeArray in Courses:" +"\n" + Arrays.toString(courseListeArray.toArray()));
+
     }
 
 
@@ -189,7 +192,7 @@ protected void onStart () {
     }
 //Seitenwechsel Kurse Edit
     public void onClickCourseEdit(View button) {
-        Intent changeIntent = new Intent(Courses.this, CourseEdit2.class);
+        Intent changeIntent = new Intent(Courses.this, CourseEdit.class);
         startActivity(changeIntent);    }
 
 
