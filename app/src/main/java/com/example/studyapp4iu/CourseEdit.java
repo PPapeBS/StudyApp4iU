@@ -27,6 +27,13 @@ import org.w3c.dom.Text;
 
 public class CourseEdit extends AppCompatActivity {
 
+    //Methode zum Prüfen ob die Eingabe nummerisch ist
+    private boolean istNummerisch(String str) {
+        if (str == null) {return false;}
+        try { int d = Integer.parseInt(str);} catch (NumberFormatException nfe) { return false; }
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +62,7 @@ public class CourseEdit extends AppCompatActivity {
         textViewCours5.setText(Courses.courseUebergabe.substring(stelleVier+1, stelleFuenf));
 
 
+
     }
 //Buttonfunktions delete
     public void onClickDeleteCourse(View button) {
@@ -74,20 +82,24 @@ public class CourseEdit extends AppCompatActivity {
 //Buttonfunktions Kurs speichern,
     public void onClickChangeCourse (View button) {
 
-    for(int i = 0; i < Courses.courseListeArray.size() -1; i++) {
+        TextView textViewCours1 = (TextView) findViewById(R.id.editCourse1);
+        String courseNo = textViewCours1.getText().toString();
+        TextView textViewCours2 = (TextView) findViewById(R.id.editCourse2);
+        String courseNameShort =  textViewCours2.getText().toString();
+        TextView textViewCours3 = (TextView) findViewById(R.id.editCourse3);
+        String courseIubhId =  textViewCours3.getText().toString();
+        TextView textViewCours4 = (TextView) findViewById(R.id.editCourse4);
+        String courseSem = textViewCours4.getText().toString();
+        TextView textViewCours5 = (TextView) findViewById(R.id.editCourse5);
+        String courseNameLong = textViewCours5.getText().toString();
+
+
+        for(int i = 0; i < Courses.courseListeArray.size() -1; i++) {
         if(Courses.courseListeArray.get(i).toString().contains(Courses.courseUebergabe)) {
-            TextView textViewCours1 = (TextView) findViewById(R.id.editCourse1);
-            String courseNo = textViewCours1.getText().toString();
-            TextView textViewCours2 = (TextView) findViewById(R.id.editCourse2);
-            String courseNameShort =  textViewCours2.getText().toString();
-            TextView textViewCours3 = (TextView) findViewById(R.id.editCourse3);
-            String courseIubhId =  textViewCours3.getText().toString();
-            TextView textViewCours4 = (TextView) findViewById(R.id.editCourse4);
-            String courseSem = textViewCours4.getText().toString();
-            TextView textViewCours5 = (TextView) findViewById(R.id.editCourse5);
-            String courseNameLong = textViewCours5.getText().toString();
-            //ID des Objektes soll durch den Nutzer nicht veränderbar sein
+
+//ID des Objektes soll durch den Nutzer nicht veränderbar sein
             String courseID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-6,Courses.courseUebergabe.length());
+//Übergbit die veränderten Daten an die ArrayList
             Courses.courseListeArray.set(i,courseNo+courseNameShort +courseIubhId+courseSem+courseNameLong+courseID);
         }
     }

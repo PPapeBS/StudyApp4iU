@@ -76,10 +76,12 @@ public class Lesson extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
 
-        // Legt Lerneinheitobjekt an.
-        Lesson lesson1 =new Lesson(4444, 1, "Stakeholdermanagement", 1111, 60, true);
-        Lesson lesson2 =new Lesson(5555, 2, "Shareholdervalue", 1111, 180, true);
-        Lesson lesson3 =new Lesson(6666, 3, "Grundgesetz", 3333, 99, true);
+// Legt Lerneinheitobjekt an.
+//Sind bereits in der MainActivity angelegt
+
+        Lesson lesson1 =new Lesson(5000, 1, "Stakeholdermanagement", 1111, 60, true);
+        Lesson lesson2 =new Lesson(5001, 2, "Shareholdervalue", 1111, 180, true);
+        Lesson lesson3 =new Lesson(5002, 3, "Grundgesetz", 3333, 99, true);
 
     }
 

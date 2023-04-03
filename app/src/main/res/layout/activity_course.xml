@@ -151,16 +151,6 @@
         android:textColor="@color/white"
         android:textSize="23sp" />
 
-    <Button
-        android:id="@+id/buttonAddDummyCourse"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:backgroundTint="#009688"
-        android:fontFamily="monospace"
-        android:onClick="addDummyCourse"
-        android:text="@string/buttonAddDummyCourses"
-        android:textColor="@color/white"
-        android:textSize="23sp" />
 
     <ListView
         android:id="@+id/listViewCourses"

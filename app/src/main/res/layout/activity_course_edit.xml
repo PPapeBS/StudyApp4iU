@@ -56,13 +56,14 @@
         android:background="#009688"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="TEMP:Nr.: 1"
+        android:text="TEMP:Nr.: 4"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="23sp" />
+        android:textSize="23sp"
+        android:inputType="numberDecimal"
+        />
 
-    <TextView
-        android:id="@+id/textView1"
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
@@ -74,14 +75,13 @@
         android:background="#009688"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:Name Kurz: BWL"
+        android:text="TEMP:Name Kurz: MATHE"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"
         />
 
-    <TextView
-        android:id="@+id/textView2"
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
@@ -94,12 +94,12 @@
         android:background="#009688"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP Name lang: Betriebswirtschaftslehre"
+        android:text="TEMP:IU ID: MATH01"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"        />
-    <TextView
-        android:id="@+id/textView3"
+
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
@@ -111,12 +111,12 @@
         android:background="#009688"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:IU ID: BBWL01"
+        android:text="TEMP:Plansemester : 4"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"        />
-    <TextView
-        android:id="@+id/textView4"
+
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
@@ -128,21 +128,14 @@
         android:background="#009688"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:Plansemester"
+        android:text="TEMPFür Mathematik gibt es keine allgemein anerkannte Definition; heute wird sie üblicherweise als eine Wissenschaft beschrieben"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="23sp"        />
+        android:textSize="17sp"        />
 
-    <TextView
-        android:id="@+id/textView5"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:text="" />
 
     />
@@ -163,8 +156,7 @@
             android:textSize="23sp" />
 
 
-        <TextView
-            android:id="@+id/textView7"
+        <Space
             android:layout_width="10dp"
             android:layout_height="0dp"
             android:text="" />

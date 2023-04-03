@@ -43,116 +43,184 @@
 
 
     <!--Kursübersicht-->
+
     <LinearLayout
-        android:layout_width="366dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"></LinearLayout>
-
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/addCourse1"
-        android:layout_width="match_parent"
+        android:layout_width="411dp"
         android:layout_height="92dp"
-        android:background="#009688"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="TEMP:Nr.: 1"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="23sp" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView1"
+        <TextView
+            android:id="@+id/textaddCours1"
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:background="#009688"
+            android:fontFamily="monospace"
+            android:text="@string/textLineCourseNo"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addCourse1"
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:background="#009688"
+            android:fontFamily="monospace"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/addCourse2"
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="92dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textaddCours2"
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:background="#009688"
+            android:textColor="@color/white"
+            android:fontFamily="monospace"
+            android:text="@string/textLineNameShort"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="23sp"    />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addCourse2"
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:background="#009688"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+    </LinearLayout>
+    <Space
+        android:layout_width="411dp"
+        android:layout_height="10dp"
+        android:text="" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textaddCours3"
+                android:layout_width="208dp"
+                android:layout_height="92dp"
+                android:background="#009688"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="@string/textLineIubhId"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addCourse3"
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:background="#009688"
+            android:textColor="@color/white"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="23sp"
+            />
+
+        </LinearLayout>
+    <Space
         android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
+
+    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textaddCours4"
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:background="#009688"
+            android:textColor="@color/white"
+            android:fontFamily="monospace"
+            android:text="@string/textLineCourseSem"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="23sp"    />
+
+        <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/addCourse4"
+        android:layout_width="208dp"
         android:layout_height="92dp"
         android:background="#009688"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:Name Kurz: BWL"
+        android:text=""
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"
-        />
+        android:inputType="numberDecimal"
+            />
 
-    <TextView
-        android:id="@+id/textView2"
+    </LinearLayout>
+
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
-
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/addCourse3"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="#009688"
-        android:textColor="@color/white"
-        android:fontFamily="monospace"
-        android:text="TEMP Name lang: Betriebswirtschaftslehre"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="23sp"        />
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/addCourse4"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="#009688"
-        android:textColor="@color/white"
-        android:fontFamily="monospace"
-        android:text="TEMP:IU ID: BBWL01"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="23sp"        />
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/addCourse5"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="#009688"
-        android:textColor="@color/white"
-        android:fontFamily="monospace"
-        android:text="TEMP:Plansemester"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="23sp"        />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="" />
-
-    />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textaddCours5"
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:background="#009688"
+            android:textColor="@color/white"
+            android:fontFamily="monospace"
+            android:text="@string/textLineNameLong"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="20sp"    />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addCourse5"
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:background="#009688"
+            android:textColor="@color/white"
+            android:fontFamily="monospace"
+            android:text=""
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="23sp"        />
+
+    </LinearLayout>
 
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
 
 
         <Button
@@ -161,14 +229,25 @@
             android:layout_height="92dp"
             android:backgroundTint="#FFCA28"
             android:fontFamily="monospace"
-            android:onClick="onClickAddChangeCourse"
+            android:onClick="onClickAddCourse"
             android:text="@string/buttonChanceCourse"
             android:textSize="23sp" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
 
-    </LinearLayout>
-
-
+        <Button
+            android:id="@+id/changeAddTemp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:backgroundTint="#43FFD028"
+            android:fontFamily="monospace"
+            android:onClick="onClickAddCourseDummy"
+            android:text="@string/buttonAddDummyCourses"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
 
 
 </LinearLayout>

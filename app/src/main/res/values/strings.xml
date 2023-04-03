@@ -35,11 +35,20 @@
     <string name="buttonChanceCourse">save course</string>
     <string name="buttonChanceCourse2">Course saved</string>
     <string name="buttonCourse">Course </string>
+    <string name="buttonNoSelectCourse">No page change possible please create course</string>
+        <!--Fehlermeldungen -->
+         <string name="errorCourseNo">"The course number must be between 1 and 2 characters long and may only consist of numbers."</string>
+         <string name="errorCourseNameShort">"The short name of the course must be between 1 and 8 characters long."</string>
+         <string name="errorCourseIubhId">"The IUBH ID of the course must not be empty and must not be longer than 8 characters."</string>
+         <string name="errorCourseSem">"The specified semester must be at least 1 and may be a maximum of 2 characters long and consist only of numbers."</string>
+        <string name="errorCourseNameLong">"The course description cannot be longer than 256 characters."</string>
+
+
 
     <!--Text im Kursmenu editieren und Info    -->
     <string name="textLineCourseNo">No.: </string>
     <string name="textLineNameShort">Name short: </string>
-    <string name="textLineNameLong">Name long: </string>
+    <string name="textLineNameLong">Course Description: </string>
     <string name="textLineIubhId">IU ID: </string>
     <string name="textLineCourseSem">Planned semester: </string>
 
@@ -52,6 +61,7 @@
     <string name="buttonModifyLessons">Modify lesson</string>
     <string name="buttonDeletLessons">Delete lesson</string>
     <string name="buttonAddLessons2">Add lesson</string>
+    <string name="buttonNoSelectLesson">No page change possible please create lesson</string>
 
 
     <!--Text im Timermenu    -->

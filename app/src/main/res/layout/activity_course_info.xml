@@ -60,8 +60,7 @@ tools:context=".CourseInfo">
     android:textAlignment="center"
     android:textSize="23sp"    />
 
-    <TextView
-        android:id="@+id/textView1"
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
@@ -77,8 +76,7 @@ tools:context=".CourseInfo">
         android:textAlignment="center"
         android:textSize="23sp"        />
 
-    <TextView
-        android:id="@+id/textView2"
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
@@ -91,12 +89,11 @@ tools:context=".CourseInfo">
     android:background="#009688"
     android:textColor="@color/white"
     android:fontFamily="monospace"
-    android:text="TEMP Name lang: Betriebswirtschaftslehre"
+    android:text="TEMP:IU ID: BBWL01"
     android:gravity="center"
     android:textAlignment="center"
     android:textSize="23sp"    />
-    <TextView
-        android:id="@+id/textView3"
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
@@ -108,12 +105,11 @@ tools:context=".CourseInfo">
         android:background="#009688"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:IU ID: BBWL01"
+        android:text="TEMP:Plansemester"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"        />
-    <TextView
-        android:id="@+id/textView4"
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
@@ -121,11 +117,11 @@ tools:context=".CourseInfo">
     <TextView
         android:id="@+id/textViewCours5"
         android:layout_width="match_parent"
-        android:layout_height="92dp"
+        android:layout_height="184dp"
         android:background="#009688"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:Plansemester"
+        android:text="TEMP Name lang: Betriebswirtschaftslehre"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"        />

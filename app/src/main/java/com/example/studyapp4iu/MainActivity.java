@@ -21,7 +21,19 @@ public class MainActivity extends AppCompatActivity {
         @NonNull ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+//Erzeugen von Dummy Objekte für Kurse, Lessons, Zeiteinheiten
+// Legt Kursobjekt an.
+        Courses bwl= new Courses(1000, 1, "BWL","Betriebswirtschaft 1","BBWL01",1);
+        Courses.courseListeArray.add(bwl);
+        Courses java= new Courses(1001, 2, "JAVA","Einführung in die Programmierung mit Java","IOBP01",2);
+        Courses.courseListeArray.add(java);
+        Courses recht= new Courses(1002, 3, "RECHT 1","Einführung in Recht","BREC01",1);
+        Courses.courseListeArray.add(recht);
 
+// Legt Lerneinheitobjekt an.
+        Lesson lesson1 =new Lesson(5000, 1, "Stakeholdermanagement", 1111, 60, true);
+        Lesson lesson2 =new Lesson(5001, 2, "Shareholdervalue", 1111, 180, true);
+        Lesson lesson3 =new Lesson(5002, 3, "Grundgesetz", 3333, 99, true);
     };
 
     public void onClickButton(View button) {
@@ -30,10 +42,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.LENGTH_LONG ).show();
     }
 //Seitenwechsel Kurse
-
      public void onClickCourses(View button) {
         Intent changeIntent = new Intent(MainActivity.this, Courses.class);
-        startActivity(changeIntent);    }
+        startActivity(changeIntent);
+
+    }
 
     //Seitenwechsel Lerneinheiten
     public void onClickLesson(View button) {

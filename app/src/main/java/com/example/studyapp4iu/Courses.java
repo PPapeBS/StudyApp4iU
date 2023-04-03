@@ -13,8 +13,10 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class Courses extends AppCompatActivity {
 
@@ -133,19 +135,18 @@ protected void onStart () {
 // Ausgabe des Inhalts von courseListeArray
     Log.d("#####Debug onStart#####", "Inhalt von courseListeArray in Courses:" +"\n" + Arrays.toString(courseListeArray.toArray()));
 
-
-
     String kursString = getString(R.string.buttonCourse);
 
     if(courseListeArray.size() > 0) {
     for (int i = 0; i < courseListeArray.size() -1;i++){
     }
 
-//ListView für die Ansicht
+//ListView für die Hauptansicht
         ListView listViewCourses = (ListView) findViewById(R.id.listViewCourses);
         ArrayAdapter<String> listViewAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
         listViewCourses.setAdapter(listViewAdapter);
+
     }
 
 }
@@ -154,50 +155,26 @@ protected void onStart () {
         return courseListeArray;
     }
 
-    //Seitenwechsel Kurse Info
+//Seitenwechsel Kurse Info
     public void onClickCourseInfo(View button) {
         Intent changeIntent = new Intent(Courses.this, CourseInfo.class);
         startActivity(changeIntent);
-
     }
 //Seitenwechsel Kurse Edit
     public void onClickCourseEdit(View button) {
         Intent changeIntent = new Intent(Courses.this, CourseEdit.class);
-        startActivity(changeIntent);    }
+        startActivity(changeIntent);
+    }
 
 
 //Buttonfunktion für AddButton
-// Hier müssen wir auf ne neue Acitivity Wechseln auf die Bearbeiten aber mit/ohne xD ausgewähltem Objekt weil Add Kurs ja gar kein Objekt erstellen soll, sondern ne neue Activity öffnet
-
 
     public void addCourse (View button) {
 
-//Alter Code, als ich das Testobjekt noch innerhalb der Kurseklasse erstellt habe
-/*
-        //Courses MATHE= new Courses (4444,4, "Mathe","Mathe Einführung","MATH01",4);
-        //FÜgt Matheobjekt der Liste hinzu
-        courseListeArray.add(MATHE);
-        // Ausgabe des Inhalts von courseListeArray
-        Log.d("#####Debug addCourse#####", "Inhalt von courseListeArray in Courses:" +"\n" + Arrays.toString(courseListeArray.toArray()));
- */
 //Seitenwechsel Kurse hinzufügen
         Intent changeIntent = new Intent(Courses.this, CourseAdd.class);
         startActivity(changeIntent);
 
-    }
-
-//Erzeugt DummyKurse
-    public void addDummyCourse (View view){
-        // Legt Kursobjekt an.
-        Courses BWL= new Courses(1111, 1, "BWL","Betriebswirtschaft 1","BBWL01",1);
-        courseListeArray.add(BWL);
-        Courses JAVA= new Courses(2222, 2, "JAVA","Einführung in die Programmierung mit Java","IOBP01",2);
-        courseListeArray.add(JAVA);
-        Courses RECHT= new Courses(3333, 3, "RECHT 1","Einführung in Recht","BREC01",1);
-        courseListeArray.add(RECHT);
-
-        Intent changeIntent = new Intent(Courses.this, Courses.class);
-        startActivity(changeIntent);
     }
 
 

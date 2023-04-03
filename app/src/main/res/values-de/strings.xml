@@ -33,13 +33,21 @@
     <string name="buttonDeletCourse2">Kurs gelöschen</string>
     <string name="buttonChanceCourse">Kurs speichern</string>
     <string name="buttonChanceCourse2">Kurs gespeichert</string>
-
     <string name="buttonCourse">Kurs</string>
+    <string name="buttonNoSelectCourse">Kein Seitenwechsel möglich bitte Kurs erstellen</string>
+        <!--Fehlermeldungen -->
+        <string name="errorCourseNo">"Die Kursnummer muss zwischen 1 und 2 Stellen lang sein und darf nur aus Zahlen bestehen."</string>
+        <string name="errorCourseNameShort">"Der Kurzname des Kurses muss zwischen 1 und 8 Zeichen lang sein."</string>
+        <string name="errorCourseIubhId">"Die IUBH-ID des Kurses darf nicht leer sein und darf maximal 8 Zeichen lang sein."</string>
+        <string name="errorCourseSem">"Das angegebene Semester muss mindestens 1 sein und darf maximal 2 Stellen lang sein sowie nur aus Zahlen bestehen."</string>
+        <string name="errorCourseNameLong">"Die Kursbeschreibung darf nicht länger als 256 Zeichen lang sein."</string>
+
+
 
     <!--Text im Kursmenu editieren und Info    -->
     <string name="textLineCourseNo">Nr.: </string>
     <string name="textLineNameShort">Name kurz: </string>
-    <string name="textLineNameLong">Name lang: </string>
+    <string name="textLineNameLong">Kursbeschreibung: </string>
     <string name="textLineIubhId">IU ID: </string>
     <string name="textLineCourseSem">Plansemester: </string>
 
@@ -51,6 +59,7 @@
     <string name="buttonModifyLessons">Lerneinheit verändern</string>
     <string name="buttonDeletLessons">Lerneinheit löschen</string>
     <string name="buttonAddLessons2">Lerneinheit hinzufügen </string>
+    <string name="buttonNoSelectLesson">Kein Seitenwechsel möglich bitte Lerneinheit erstellen</string>
 
     <!--Text im Timermenu    -->
     <string name="buttonSelectLessons">Lerneinheit auswählen</string>
