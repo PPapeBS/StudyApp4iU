@@ -16,8 +16,6 @@ import java.util.Arrays;
 
 import android.widget.Spinner;
 
-import com.google.android.material.theme.overlay.MaterialThemeOverlay;
-
 public class Courses extends AppCompatActivity {
 
     //Definition der Variablen
@@ -93,19 +91,8 @@ public class Courses extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_courses);
+        setContentView(R.layout.activity_course);
 
-
-
-//OBJEKTE VERSCHWINDEN BEIM KLICK AUF ZURÜCK
-
-        // Legt Kursobjekt an.
-          Courses BWL= new Courses(1111, 1, "BWL","Betriebswirtschaft 1","BBWL01",1);
-          courseListeArray.add(BWL);
-          Courses JAVA= new Courses(2222, 2, "JAVA","Einführung in die Programmierung mit Java","IOBP01",2);
-          courseListeArray.add(JAVA);
-          Courses RECHT= new Courses(3333, 3, "RECHT 1","Einführung in Recht","BREC01",1);
-          courseListeArray.add(RECHT);
           //LEGT Platzhalter Leerobjekt
           Courses LEER = new Courses(0000, 0, "leer", "leerlang", "000", 0);
 
@@ -167,24 +154,7 @@ protected void onStart () {
         return courseListeArray;
     }
 
-
-//Buttonfunktion für AddButton
-// Hier müssen wir auf ne neue Acitivity Wechseln auf die Bearbeiten aber mit/ohne xD ausgewähltem Objekt weil Add Kurs ja gar kein Objekt erstellen soll, sondern ne neue Activity öffnet
-
-
-    public void addCourse (View view) {
-        Courses MATHE= new Courses (4444,4, "Mathe","Mathe Einführung","MATH01",4);
-//FÜgt Matheobjekt der Liste hinzu
-        courseListeArray.add(MATHE);
-
-// Ausgabe des Inhalts von courseListeArray
-        Log.d("#####Debug addCourse#####", "Inhalt von courseListeArray in Courses:" +"\n" + Arrays.toString(courseListeArray.toArray()));
-
-    }
-
-
-
-//Seitenwechsel Kurse Info
+    //Seitenwechsel Kurse Info
     public void onClickCourseInfo(View button) {
         Intent changeIntent = new Intent(Courses.this, CourseInfo.class);
         startActivity(changeIntent);
@@ -194,6 +164,42 @@ protected void onStart () {
     public void onClickCourseEdit(View button) {
         Intent changeIntent = new Intent(Courses.this, CourseEdit.class);
         startActivity(changeIntent);    }
+
+
+//Buttonfunktion für AddButton
+// Hier müssen wir auf ne neue Acitivity Wechseln auf die Bearbeiten aber mit/ohne xD ausgewähltem Objekt weil Add Kurs ja gar kein Objekt erstellen soll, sondern ne neue Activity öffnet
+
+
+    public void addCourse (View button) {
+
+//Alter Code, als ich das Testobjekt noch innerhalb der Kurseklasse erstellt habe
+/*
+        //Courses MATHE= new Courses (4444,4, "Mathe","Mathe Einführung","MATH01",4);
+        //FÜgt Matheobjekt der Liste hinzu
+        courseListeArray.add(MATHE);
+        // Ausgabe des Inhalts von courseListeArray
+        Log.d("#####Debug addCourse#####", "Inhalt von courseListeArray in Courses:" +"\n" + Arrays.toString(courseListeArray.toArray()));
+ */
+//Seitenwechsel Kurse hinzufügen
+        Intent changeIntent = new Intent(Courses.this, CourseAdd.class);
+        startActivity(changeIntent);
+
+    }
+
+//Erzeugt DummyKurse
+    public void addDummyCourse (View view){
+        // Legt Kursobjekt an.
+        Courses BWL= new Courses(1111, 1, "BWL","Betriebswirtschaft 1","BBWL01",1);
+        courseListeArray.add(BWL);
+        Courses JAVA= new Courses(2222, 2, "JAVA","Einführung in die Programmierung mit Java","IOBP01",2);
+        courseListeArray.add(JAVA);
+        Courses RECHT= new Courses(3333, 3, "RECHT 1","Einführung in Recht","BREC01",1);
+        courseListeArray.add(RECHT);
+
+        Intent changeIntent = new Intent(Courses.this, Courses.class);
+        startActivity(changeIntent);
+    }
+
 
 
 //Gibt Daten aus dem Objekt per String zurück, wird benötigt für Spinner und ListView

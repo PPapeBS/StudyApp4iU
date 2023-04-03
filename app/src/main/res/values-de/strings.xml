@@ -19,11 +19,16 @@
     <string name="headlineCourses">Kursübersicht</string>
     <string name="headlineCoursesEdit">Kurs bearbeiten</string>
     <string name="headlineCoursesInfo">Kursinfos</string>
+    <string name="headlineCoursesAdd">Kurs hinzufügen</string>
     <string name="headlineLessons">Lerneinheiten</string>
+    <string name="headlineLessonEdit">Lerneinheiten bearbeiten</string>
+    <string name="headlineLessonInfo">Lerneinheiten Info</string>
+    <string name="headlineLessonAdd">Lerneinheiten hinzufügen</string>
     <string name="headlineTimer">Timer</string>
 
     <!--Text im Kursmenu    -->
     <string name="buttonAddCourse">+ Neuen Kurs hinzufügen</string>
+    <string name="buttonAddDummyCourses">+ Dummy Kurse hinzufügen</string>
     <string name="buttonDeletCourse">Kurs löschen</string>
     <string name="buttonDeletCourse2">Kurs gelöschen</string>
     <string name="buttonChanceCourse">Kurs speichern</string>
@@ -42,6 +47,7 @@
     <string name="buttonSelectCourse">Kurs auswählen</string>
     <string name="requestSelectCourse">Bitte Kurs auswählen</string>
     <string name="buttonAddLessons">+ Lerneinheit hinzufügen</string>
+    <string name="buttonAddDummyLessons">+ Dummy Lerneinheiten hinzufügen</string>
     <string name="buttonModifyLessons">Lerneinheit verändern</string>
     <string name="buttonDeletLessons">Lerneinheit löschen</string>
     <string name="buttonAddLessons2">Lerneinheit hinzufügen </string>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CourseEdit">
+    tools:context=".CourseAdd">
 
 
     <LinearLayout
@@ -29,7 +29,7 @@
                 android:id="@+id/headlineCourses"
                 android:layout_width="199dp"
                 android:layout_height="wrap_content"
-                android:text="@string/headlineCoursesEdit"
+                android:text="@string/headlineCoursesAdd"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -50,7 +50,7 @@
 
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse1"
+        android:id="@+id/addCourse1"
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:background="#009688"
@@ -68,7 +68,7 @@
         android:text="" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse2"
+        android:id="@+id/addCourse2"
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:background="#009688"
@@ -88,7 +88,7 @@
 
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse3"
+        android:id="@+id/addCourse3"
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:background="#009688"
@@ -105,7 +105,7 @@
         android:text="" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse4"
+        android:id="@+id/addCourse4"
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:background="#009688"
@@ -122,7 +122,7 @@
         android:text="" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse5"
+        android:id="@+id/addCourse5"
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:background="#009688"
@@ -152,30 +152,16 @@
         android:layout_height="92dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/deleteCourse"
-            android:layout_width="203dp"
-            android:layout_height="92dp"
-            android:backgroundTint="#EC407A"
-            android:fontFamily="monospace"
-            android:onClick="onClickDeleteCourse"
-            android:text="@string/buttonDeletCourse"
-            android:textSize="23sp" />
 
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="10dp"
-            android:layout_height="0dp"
-            android:text="" />
 
         <Button
-            android:id="@+id/changeCourse"
+            android:id="@+id/changeAddCourse"
             android:layout_width="match_parent"
             android:layout_height="92dp"
             android:backgroundTint="#FFCA28"
             android:fontFamily="monospace"
-            android:onClick="onClickChangeCourse"
+            android:onClick="onClickAddChangeCourse"
             android:text="@string/buttonChanceCourse"
             android:textSize="23sp" />
 

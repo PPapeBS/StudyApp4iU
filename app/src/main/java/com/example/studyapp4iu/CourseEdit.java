@@ -56,33 +56,21 @@ public class CourseEdit extends AppCompatActivity {
 
 
     }
-
-//Übergebenen Daten aus Courses
-/*
-public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                courseUebergabe = adapterView.getItemAtPosition(i).toString();
-            }
-//Noch übernommen von dem MailHandling, anpassen auf die Objetveränderung
-    public void changeCourse( View button) {
-        EditText editCourse1 =
-                (EditText) findViewById(R.id.editCourse1 );
- */
-
-//Buttonfunktions delete Template
+//Buttonfunktions delete
     public void onClickDeleteCourse(View button) {
-        Toast.makeText(CourseEdit.this,
-                R.string.buttonDeletCourse2,
-                Toast.LENGTH_LONG ).show();
 
-//Seitenwechsel zurück
-        /*
+//Löscht das aktuelle Kursobjekt aus dem Array
+        for(int i = 0; i < Courses.courseListeArray.size() -1; i++) {
+            if (Courses.courseListeArray.get(i).toString().contains(Courses.courseUebergabe)) {
+                Courses.courseListeArray.remove(i);
+            }
+
+//Seitenwechsel auf Kurse zurück
         Intent changeIntent = new Intent(CourseEdit.this, Courses.class);
         startActivity(changeIntent);
-     */
-
+        }
     }
 
-///Hier muss ich jetzt irgendwie Kurs in das Array von Kursübersicht bekommen
 //Buttonfunktions Kurs speichern,
     public void onClickChangeCourse (View button) {
 
@@ -98,20 +86,15 @@ public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
             String courseSem = textViewCours4.getText().toString();
             TextView textViewCours5 = (TextView) findViewById(R.id.editCourse5);
             String courseNameLong = textViewCours5.getText().toString();
+            //ID des Objektes soll durch den Nutzer nicht veränderbar sein
             String courseID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-6,Courses.courseUebergabe.length());
-            Courses.courseListeArray.set(i,"Nr: "+courseNo+"# "+courseNameShort +"# IU:"+courseIubhId+ "# Sem:"+courseSem+"# " +courseNameLong+"# "+courseID+"# " );
-
-
-
+            Courses.courseListeArray.set(i,courseNo+courseNameShort +courseIubhId+courseSem+courseNameLong+courseID);
         }
     }
+// Ausgabe des Inhalts von courseListeArray
+            Log.d("#####Debug on EditKurs#####", "Inhalt von courseListeArray in CoursEdit:" +"\n" + Arrays.toString(Courses.courseListeArray.toArray()));
 
-//KOPIE AUS COURSES JAVA
-        /*
-        return
-
-  */
-//Seitenwechsel Kurse Zurück, damit die Activity nicht zerstört wird wie beim zurück button
+//Seitenwechsel auf Kurse zurück
             Intent changeIntent = new Intent(CourseEdit.this, Courses.class);
             startActivity(changeIntent);
 
