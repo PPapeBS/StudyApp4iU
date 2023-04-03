@@ -14,6 +14,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -104,17 +105,15 @@ public class Courses extends AppCompatActivity {
 
 
 //Array Adapter für Kursauswahl oben
-//Benötigt noch irgendwie ne Auswahlfunktion, entweder hier oder unten im Seitenwechsel Intent Kurse Info oder Kurs Edit
         if(courseListeArray.size() > 0){
 
             ArrayAdapter<Courses> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
 
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerCourses.setAdapter(adapter);
-
+        }
 
 //ÜBERGABE des Ausgewählten Objekt an die InfoView-Ansicht von Kurse
-        }
         spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -122,7 +121,7 @@ public class Courses extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-            }
+                 }
             }
             );
     }
@@ -141,13 +140,26 @@ protected void onStart () {
     for (int i = 0; i < courseListeArray.size() -1;i++){
     }
 
+
+
 //ListView für die Hauptansicht
+// Sortiert die Liste anhand der courseNo
+        Collections.sort(courseListeArray, new Comparator<Courses>() {
+            @Override
+            public int compare(Courses o1, Courses o2) {
+                return Integer.compare(o1.getCourseNo(), o2.getCourseNo());
+            }
+        });
+
+
         ListView listViewCourses = (ListView) findViewById(R.id.listViewCourses);
         ArrayAdapter<String> listViewAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
         listViewCourses.setAdapter(listViewAdapter);
-
     }
+
+
+
 
 }
 //Getter Methode fürs array
@@ -170,20 +182,17 @@ protected void onStart () {
 //Buttonfunktion für AddButton
 
     public void addCourse (View button) {
-
 //Seitenwechsel Kurse hinzufügen
         Intent changeIntent = new Intent(Courses.this, CourseAdd.class);
         startActivity(changeIntent);
 
     }
 
-
-
 //Gibt Daten aus dem Objekt per String zurück, wird benötigt für Spinner und ListView
     @Override
     public String toString() {
 //Stringverknüpftung für das Präfix Kurs
-        return "Nr: "+courseNo+"# "+courseNameShort +"# IU:"+courseIubhId+ "# Sem:"+courseSem+"# " +courseNameLong+"# "+courseID+"# "
+        return "Nr:"+courseNo+"#"+courseNameShort +"#IU:"+courseIubhId+ "#Sem:"+courseSem+"#" +courseNameLong+"#"+courseID+"#"
         ;
     }
 

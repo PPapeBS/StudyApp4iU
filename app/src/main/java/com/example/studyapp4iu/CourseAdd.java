@@ -84,9 +84,11 @@ public class CourseAdd extends AppCompatActivity {
 //Dummykurs hinzufügen
         public void onClickAddCourseDummy (View button){
 
-            Courses mathe = new Courses(1, 4, "MATHE1", "Für Mathematik gibt es keine allgemein anerkannte Definition; heute wird sie üblicherweise als eine Wissenschaft beschrieben", "MATH01", 4);
+            Courses mathe = new Courses(1, 1, "MATHE1", "Für Mathematik gibt es keine allgemein anerkannte Definition; heute wird sie üblicherweise als eine Wissenschaft beschrieben", "MATH01", 4);
             int matheCourseID =  999 + Courses.courseListeArray.size() + 1;
             mathe.setCourseID(matheCourseID);
+            int matheCourseNo = Courses.courseListeArray.size() + 1;
+            mathe.setCourseNo(matheCourseNo);
             Courses.courseListeArray.add(mathe);
 
 

@@ -98,11 +98,12 @@ public class CourseEdit extends AppCompatActivity {
         if(Courses.courseListeArray.get(i).toString().contains(Courses.courseUebergabe)) {
 
 //ID des Objektes soll durch den Nutzer nicht veränderbar sein
-            String courseID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-6,Courses.courseUebergabe.length());
+            String courseID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-5,Courses.courseUebergabe.length());
 //Übergbit die veränderten Daten an die ArrayList
-            Courses.courseListeArray.set(i,courseNo+courseNameShort +courseIubhId+courseSem+courseNameLong+courseID);
+            Courses.courseListeArray.set(i,courseNo+"#"+courseNameShort+"#"+courseIubhId+ "#"+courseSem+"#" +courseNameLong+"#"+courseID);
         }
     }
+
 // Ausgabe des Inhalts von courseListeArray
             Log.d("#####Debug on EditKurs#####", "Inhalt von courseListeArray in CoursEdit:" +"\n" + Arrays.toString(Courses.courseListeArray.toArray()));
 
