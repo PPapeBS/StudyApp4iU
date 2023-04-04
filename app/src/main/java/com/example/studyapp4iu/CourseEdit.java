@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 public class CourseEdit extends AppCompatActivity {
 
-    //Methode zum Prüfen ob die Eingabe nummerisch ist
+//Methode zum Prüfen ob die Eingabe nummerisch ist
     private boolean istNummerisch(String str) {
         if (str == null) {return false;}
         try { int d = Integer.parseInt(str);} catch (NumberFormatException nfe) { return false; }
@@ -47,7 +47,6 @@ public class CourseEdit extends AppCompatActivity {
         TextView textViewCours5 = (TextView) findViewById(R.id.editCourse5);
         int stelleFuenf = Courses.courseUebergabe.indexOf('#', stelleVier + 1);
         textViewCours5.setText(Courses.courseUebergabe.substring(stelleVier+1, stelleFuenf));
-
 
 
     }
@@ -87,6 +86,7 @@ public class CourseEdit extends AppCompatActivity {
 //ID des Objektes soll durch den Nutzer nicht veränderbar sein
             String courseID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-5,Courses.courseUebergabe.length());
 //Übergbit die veränderten Daten an die ArrayList
+            //                 return "Nr:"+courseNo+"#"+courseNameShort +"#IU:"+courseIubhId+ "#Sem:"+courseSem+"#" +courseNameLong+"#"+courseID+"#"
             Courses.courseListeArray.set(i,courseNo+"#"+courseNameShort+"#"+courseIubhId+ "#"+courseSem+"#" +courseNameLong+"#"+courseID);
         }
     }

@@ -78,7 +78,7 @@
         android:text="TEMP:Titel: Das Wesen der Wissenschaft"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="17sp"
         />
 
     <Space
@@ -94,7 +94,7 @@
         android:background="#00BCD4"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP: Zugehöriger Kurs"
+        android:text="TEMP: Zeit in Sekunden"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"        />
@@ -111,11 +111,27 @@
         android:background="#00BCD4"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:Aufgewendete Zeit: 4"
+        android:text="TEMP:Zeit gesetzt"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"        />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editLesson5"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="#00BCD4"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"
+        android:text="TEMP: Zugehöriger Kurs"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="23sp"        />
 
     <Space
         android:layout_width="match_parent"
@@ -137,7 +153,7 @@
             android:fontFamily="monospace"
             android:onClick="onClickDeleteLesson"
             android:text="@string/buttonDeletLessons"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
 
 
         <Space
@@ -153,7 +169,7 @@
             android:fontFamily="monospace"
             android:onClick="onClickChangeLesson"
             android:text="@string/buttonChangeLessons"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
 
 
     </LinearLayout>
