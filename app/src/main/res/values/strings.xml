@@ -65,12 +65,14 @@
     <string name="errorLessonNo">"The Lessons number must be between 1 and 2 characters long and may only consist of numbers."</string>
     <string name="errorLessonTitle">"The title of the the lesson must be between 8 and 81 characters long."</string>
     <string name="errorLessonTime">"The specified time must be at least 1 second consist only of numbers."</string>
+    <string name="errorCourseRelated">"The associated course information is incorrect."</string>
 
     <!--Text im Lerneinheiten editieren und Info    -->
     <string name="textLineLessonNo">No.: </string>
     <string name="textLineTitle">Title: </string>
     <string name="textLineRelatedCourse">Related course: </string>
     <string name="textLineTime">Time: </string>
+    <string name="textLineTimeSet">Time Set: </string>
 
     <!--Text im Timermenu    -->
     <string name="buttonSelectLessons">Select lesson</string>
