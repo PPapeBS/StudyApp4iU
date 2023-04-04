@@ -146,7 +146,7 @@
         android:layout_height="92dp"
         android:backgroundTint="#009688"
         android:fontFamily="monospace"
-        android:onClick="addCourse"
+        android:onClick="onClickAddCourse"
         android:text="@string/buttonAddCourse"
         android:textColor="@color/white"
         android:textSize="23sp" />

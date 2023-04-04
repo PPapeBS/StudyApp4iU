@@ -30,20 +30,18 @@
     <!--Text im Kursmenu    -->
     <string name="buttonAddCourse">+ Add new course</string>
     <string name="buttonAddDummyCourses">+ Add Dummy courses</string>
-    <string name="buttonDeletCourse">Delete course</string>
+    <string name="buttonDeleteCourse">Delete course</string>
     <string name="buttonDeletCourse2">Course deleted</string>
-    <string name="buttonChanceCourse">save course</string>
-    <string name="buttonChanceCourse2">Course saved</string>
+    <string name="buttonChangeCourse">save course</string>
+    <string name="buttonChangeCourse2">Course saved</string>
     <string name="buttonCourse">Course </string>
     <string name="buttonNoSelectCourse">No page change possible please create course</string>
-        <!--Fehlermeldungen -->
-         <string name="errorCourseNo">"The course number must be between 1 and 2 characters long and may only consist of numbers."</string>
-         <string name="errorCourseNameShort">"The short name of the course must be between 1 and 8 characters long."</string>
-         <string name="errorCourseIubhId">"The IUBH ID of the course must not be empty and must not be longer than 8 characters."</string>
-         <string name="errorCourseSem">"The specified semester must be at least 1 and may be a maximum of 2 characters long and consist only of numbers."</string>
-        <string name="errorCourseNameLong">"The course description cannot be longer than 256 characters."</string>
-
-
+    <!--Fehlermeldungen -->
+    <string name="errorCourseNo">"The course number must be between 1 and 2 characters long and may only consist of numbers."</string>
+    <string name="errorCourseNameShort">"The short name of the course must be between 1 and 8 characters long."</string>
+    <string name="errorCourseIubhId">"The IUBH ID of the course must not be empty and must not be longer than 8 characters."</string>
+    <string name="errorCourseSem">"The specified semester must be at least 1 and may be a maximum of 2 characters long and consist only of numbers."</string>
+    <string name="errorCourseNameLong">"The course description cannot be longer than 256 characters."</string>
 
     <!--Text im Kursmenu editieren und Info    -->
     <string name="textLineCourseNo">No.: </string>
@@ -58,11 +56,21 @@
     <string name="requestSelectCourse">Please select course</string>
     <string name="buttonAddLessons">+ Add lesson</string>
     <string name="buttonAddDummyLessons">+ Add Dummy lessons</string>
-    <string name="buttonModifyLessons">Modify lesson</string>
+    <string name="buttonChangeLessons">Modify lesson</string>
+    <string name="buttonChangeLessons2">Lesson saved</string>
     <string name="buttonDeletLessons">Delete lesson</string>
     <string name="buttonAddLessons2">Add lesson</string>
     <string name="buttonNoSelectLesson">No page change possible please create lesson</string>
+    <!--Fehlermeldungen -->
+    <string name="errorLessonNo">"The Lessons number must be between 1 and 2 characters long and may only consist of numbers."</string>
+    <string name="errorLessonTitle">"The title of the the lesson must be between 8 and 81 characters long."</string>
+    <string name="errorLessonTime">"The specified time must be at least 1 second consist only of numbers."</string>
 
+    <!--Text im Lerneinheiten editieren und Info    -->
+    <string name="textLineLessonNo">No.: </string>
+    <string name="textLineTitle">Title: </string>
+    <string name="textLineRelatedCourse">Related course: </string>
+    <string name="textLineTime">Time: </string>
 
     <!--Text im Timermenu    -->
     <string name="buttonSelectLessons">Select lesson</string>

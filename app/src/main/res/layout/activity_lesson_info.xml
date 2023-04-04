@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CourseEdit">
+    tools:context=".LessonInfo">
 
 
     <LinearLayout
@@ -26,10 +26,10 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/headlineCourses"
+                android:id="@+id/headlineLesson"
                 android:layout_width="199dp"
                 android:layout_height="wrap_content"
-                android:text="@string/headlineCoursesEdit"
+                android:text="@string/headlineLessonInfo"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -48,133 +48,88 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"></LinearLayout>
 
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse1"
+    <TextView
+        android:id="@+id/textViewLesson1"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:background="#009688"
+        android:background="#00BCD4"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="TEMP:Nr.: 4"
+        android:text="TEMP:Nr.: 1"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="23sp"
-        android:inputType="numberDecimal"
-        />
+        android:textSize="23sp" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse2"
+    <TextView
+        android:id="@+id/textViewLesson2"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:background="#009688"
+        android:background="#00BCD4"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:Name Kurz: MATHE"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="23sp"
-        />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse3"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="#009688"
-        android:textColor="@color/white"
-        android:fontFamily="monospace"
-        android:text="TEMP:IU ID: MATH01"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="23sp"        />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse4"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="#009688"
-        android:textColor="@color/white"
-        android:fontFamily="monospace"
-        android:text="TEMP:Plansemester : 4"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="23sp"        />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse5"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="#009688"
-        android:textColor="@color/white"
-        android:fontFamily="monospace"
-        android:text="TEMPFür Mathematik gibt es keine allgemein anerkannte Definition; heute wird sie üblicherweise als eine Wissenschaft beschrieben"
+        android:text="TEMP:Titel: Was habe ich hier gelernt"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="17sp"        />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="10dp"
         android:text="" />
 
-    />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textViewLesson3"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:orientation="horizontal">
+        android:background="#00BCD4"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"
+        android:text="TEMP:Zeit in Sekunden"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="23sp"    />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
 
-        <Button
-            android:id="@+id/deleteCourse"
-            android:layout_width="203dp"
-            android:layout_height="92dp"
-            android:backgroundTint="#EC407A"
-            android:fontFamily="monospace"
-            android:onClick="onClickDeleteCourse"
-            android:text="@string/buttonDeleteCourse"
-            android:textSize="23sp" />
+    <TextView
+        android:id="@+id/textViewLesson4"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="#00BCD4"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"
+        android:text="TEMP:Zeit gesetzt?"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="23sp"        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
 
+    <TextView
+        android:id="@+id/textViewLesson5"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="#00BCD4"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"
+        android:text="TEMP:Kurse zugehörig"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="23sp"        />
 
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="0dp"
-            android:text="" />
-
-        <Button
-            android:id="@+id/changeCourse"
-            android:layout_width="match_parent"
-            android:layout_height="92dp"
-            android:backgroundTint="#FFCA28"
-            android:fontFamily="monospace"
-            android:onClick="onClickChangeCourse"
-            android:text="@string/buttonChangeCourse"
-            android:textSize="23sp" />
-
-
-    </LinearLayout>
-
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
 
 
 </LinearLayout>

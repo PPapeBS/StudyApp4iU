@@ -29,10 +29,10 @@
     <!--Text im Kursmenu    -->
     <string name="buttonAddCourse">+ Neuen Kurs hinzufügen</string>
     <string name="buttonAddDummyCourses">+ Dummy Kurse hinzufügen</string>
-    <string name="buttonDeletCourse">Kurs löschen</string>
+    <string name="buttonDeleteCourse">Kurs löschen</string>
     <string name="buttonDeletCourse2">Kurs gelöschen</string>
-    <string name="buttonChanceCourse">Kurs speichern</string>
-    <string name="buttonChanceCourse2">Kurs gespeichert</string>
+    <string name="buttonChangeCourse">Kurs speichern</string>
+    <string name="buttonChangeCourse2">Kurs gespeichert</string>
     <string name="buttonCourse">Kurs</string>
     <string name="buttonNoSelectCourse">Kein Seitenwechsel möglich bitte Kurs erstellen</string>
         <!--Fehlermeldungen -->
@@ -56,10 +56,21 @@
     <string name="requestSelectCourse">Bitte Kurs auswählen</string>
     <string name="buttonAddLessons">+ Lerneinheit hinzufügen</string>
     <string name="buttonAddDummyLessons">+ Dummy Lerneinheiten hinzufügen</string>
-    <string name="buttonModifyLessons">Lerneinheit verändern</string>
+    <string name="buttonChangeLessons">Lerneinheit verändern</string>
+    <string name="buttonChangeLessons2">Lerneinheit verändert</string>
     <string name="buttonDeletLessons">Lerneinheit löschen</string>
     <string name="buttonAddLessons2">Lerneinheit hinzufügen </string>
     <string name="buttonNoSelectLesson">Kein Seitenwechsel möglich bitte Lerneinheit erstellen</string>
+          <!--Fehlermeldungen -->
+            <string name="errorLessonNo">"Die Lerneinheitnummer muss zwischen 1 und 2 Stellen lang sein und darf nur aus Zahlen bestehen."</string>
+            <string name="errorLessonTitle">"Der Titel der Lerneinheit muss zwischen 1 und 81 Zeichen lang sein."</string>
+            <string name="errorLessonTime">"Die eingegebene Zeit muss mindestens 1 Sekunde betragen und darf nur aus Zahlen bestehen."</string>
+
+    <!--Text im Lerneinheiten editieren und Info    -->
+    <string name="textLineLessonNo">No.: </string>
+    <string name="textLineTitle">Title: </string>
+    <string name="textLineRelatedCourse">Related course: </string>
+    <string name="textLineTime">Time: </string>
 
     <!--Text im Timermenu    -->
     <string name="buttonSelectLessons">Lerneinheit auswählen</string>

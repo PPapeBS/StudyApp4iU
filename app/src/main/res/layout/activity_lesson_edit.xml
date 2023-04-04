@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CourseEdit">
+    tools:context=".LessonEdit">
 
 
     <LinearLayout
@@ -26,11 +26,11 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/headlineCourses"
+                android:id="@+id/headlineLesson"
                 android:layout_width="199dp"
                 android:layout_height="wrap_content"
-                android:text="@string/headlineCoursesEdit"
-                android:textSize="24sp" />
+                android:text="@string/headlineLessonEdit"
+                android:textSize="17sp" />
         </LinearLayout>
 
         <ImageView
@@ -50,13 +50,13 @@
 
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse1"
+        android:id="@+id/editLesson1"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:background="#009688"
+        android:background="#00BCD4"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="TEMP:Nr.: 4"
+        android:text="TEMP:No.: 4"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="23sp"
@@ -69,16 +69,16 @@
         android:text="" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse2"
+        android:id="@+id/editLesson2"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:background="#009688"
+        android:background="#00BCD4"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:Name Kurz: MATHE"
+        android:text="TEMP:Titel: Das Wesen der Wissenschaft"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="23sp"
+        android:textSize="20sp"
         />
 
     <Space
@@ -88,13 +88,13 @@
 
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse3"
+        android:id="@+id/editLesson3"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:background="#009688"
+        android:background="#00BCD4"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:IU ID: MATH01"
+        android:text="TEMP: Zugehöriger Kurs"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"        />
@@ -105,33 +105,17 @@
         android:text="" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse4"
+        android:id="@+id/editLesson4"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:background="#009688"
+        android:background="#00BCD4"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP:Plansemester : 4"
+        android:text="TEMP:Aufgewendete Zeit: 4"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="23sp"        />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editCourse5"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="#009688"
-        android:textColor="@color/white"
-        android:fontFamily="monospace"
-        android:text="TEMPFür Mathematik gibt es keine allgemein anerkannte Definition; heute wird sie üblicherweise als eine Wissenschaft beschrieben"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="17sp"        />
 
     <Space
         android:layout_width="match_parent"
@@ -146,14 +130,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/deleteCourse"
+            android:id="@+id/deleteLesson"
             android:layout_width="203dp"
             android:layout_height="92dp"
             android:backgroundTint="#EC407A"
             android:fontFamily="monospace"
-            android:onClick="onClickDeleteCourse"
-            android:text="@string/buttonDeleteCourse"
-            android:textSize="23sp" />
+            android:onClick="onClickDeleteLesson"
+            android:text="@string/buttonDeletLessons"
+            android:textSize="20sp" />
 
 
         <Space
@@ -162,14 +146,14 @@
             android:text="" />
 
         <Button
-            android:id="@+id/changeCourse"
+            android:id="@+id/changeLesson"
             android:layout_width="match_parent"
             android:layout_height="92dp"
             android:backgroundTint="#FFCA28"
             android:fontFamily="monospace"
-            android:onClick="onClickChangeCourse"
-            android:text="@string/buttonChangeCourse"
-            android:textSize="23sp" />
+            android:onClick="onClickChangeLesson"
+            android:text="@string/buttonChangeLessons"
+            android:textSize="20sp" />
 
 
     </LinearLayout>

@@ -25,7 +25,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/headlineCourses"
+                android:id="@+id/headlineLesson"
                 android:layout_width="199dp"
                 android:layout_height="wrap_content"
                 android:text="@string/headlineLessons"
@@ -47,29 +47,70 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"></LinearLayout>
 
+    <Spinner
+        android:id="@+id/spinnerLesson"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="#00BCD4"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/buttonLessonInfo"
+            android:layout_width="187dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#7E57C2"
+            android:fontFamily="monospace"
+            android:onClick="onClickLessonInfo"
+            android:text="@string/headlineLessonInfo"
+            android:textSize="17sp" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5" />
+        <Button
+            android:id="@+id/buttonLessonEdit"
+            android:layout_width="187dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#FFCA28"
+            android:fontFamily="monospace"
+            android:onClick="onClickLessonEdit"
+            android:text="@string/headlineLessonEdit"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+
     <Button
-        android:id="@+id/buttonselectCourse"
+        android:id="@+id/buttonAddLesson"
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:backgroundTint="#00BCD4"
         android:fontFamily="monospace"
-        android:onClick="onClickButtonSelectCourse"
-        android:text="@string/buttonSelectCourse"
+        android:onClick="onClickAddLesson"
+        android:text="@string/buttonAddLessons"
         android:textSize="23sp"        />
 
-
-
-
-    <Button
-        android:id="@+id/buttonAddCourse"
+    <ListView
+        android:id="@+id/listViewLesson"
         android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:backgroundTint="#00BCD4"
+        android:clickable="false"
+        android:layout_height="280dp"
+        android:background="#00BCD4"
         android:fontFamily="monospace"
-        android:onClick="onClickButtonAddCourse"
-        android:text="@string/buttonAddCourse"
-        android:textSize="23sp"        />
-
-
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
 
 </LinearLayout>

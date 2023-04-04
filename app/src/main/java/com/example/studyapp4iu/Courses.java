@@ -13,11 +13,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class Courses extends AppCompatActivity {
 
@@ -31,7 +28,6 @@ public class Courses extends AppCompatActivity {
     private int courseSem;
 
     public static String courseUebergabe = "";
-
 
 
 //Konstruktor für Courses
@@ -85,24 +81,27 @@ public class Courses extends AppCompatActivity {
     }
 
 
-    //ArrayListe für die Kurse
+
+//ArrayListe für die Kurse
     public static ArrayList courseListeArray = new ArrayList();
 
+//Getter Methode fürs array
+    public ArrayList getCourseListeArray() {
+        return courseListeArray;
+    }
 
 
-    //Start Methode der Klasse
+//Start Methode der Klasse
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
-          //LEGT Platzhalter Leerobjekt
+        //LEGT Platzhalter Leerobjekt
           Courses LEER = new Courses(0000, 0, "leer", "leerlang", "000", 0);
-
 
 //SpinnerObjekt für Kursauswahl
         Spinner spinnerCourses = (Spinner) findViewById(R.id.spinnerCourses);
-
 
 //Array Adapter für Kursauswahl oben
         if(courseListeArray.size() > 0){
@@ -144,14 +143,16 @@ protected void onStart () {
 
 //ListView für die Hauptansicht
 // Sortiert die Liste anhand der courseNo
+//Funktioniert mit dem Editieren nicht
+        /*
+
         Collections.sort(courseListeArray, new Comparator<Courses>() {
             @Override
             public int compare(Courses o1, Courses o2) {
                 return Integer.compare(o1.getCourseNo(), o2.getCourseNo());
             }
         });
-
-
+    */
         ListView listViewCourses = (ListView) findViewById(R.id.listViewCourses);
         ArrayAdapter<String> listViewAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
@@ -160,12 +161,8 @@ protected void onStart () {
 
 
 
-
 }
-//Getter Methode fürs array
-    public ArrayList getCourseListeArray() {
-        return courseListeArray;
-    }
+
 
 //Seitenwechsel Kurse Info
     public void onClickCourseInfo(View button) {
@@ -181,7 +178,7 @@ protected void onStart () {
 
 //Buttonfunktion für AddButton
 
-    public void addCourse (View button) {
+    public void onClickAddCourse(View button) {
 //Seitenwechsel Kurse hinzufügen
         Intent changeIntent = new Intent(Courses.this, CourseAdd.class);
         startActivity(changeIntent);

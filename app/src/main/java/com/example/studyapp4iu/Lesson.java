@@ -2,11 +2,17 @@ package com.example.studyapp4iu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-import java.util.Date;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Lesson extends AppCompatActivity {
 
@@ -18,8 +24,10 @@ public class Lesson extends AppCompatActivity {
     private int lessonTime;
     private boolean lessonTimeSet;
 
-    //Konstruktor für Courses
-    // No-arg Constructor
+    public static String lessonUebergabe = "";
+
+//Konstruktor für Lessons
+// No-arg Constructor
     public Lesson (){ }
     public Lesson(int lessonId, int lessonNo, String lessonTitle, int courseRelated, int lessonTime, boolean lessonTimeSet) {
         this.lessonId = lessonId;
@@ -28,8 +36,6 @@ public class Lesson extends AppCompatActivity {
         this.courseRelated = courseRelated;
         this.lessonTime = lessonTime;
         this.lessonTimeSet = lessonTimeSet;
-
-
     }
 
     //Getter + Setter Methoden
@@ -70,32 +76,102 @@ public class Lesson extends AppCompatActivity {
         this.lessonTimeSet = lessonTimeSet;
     }
 
-    //Start Methode der Klasse
+
+
+//ArrayListe für die Kurse
+    public static ArrayList lessonListeArray = new ArrayList();
+//Getter Methode fürs array
+    public ArrayList getLessonListeArray() {
+        return lessonListeArray;
+    }
+
+
+//Start Methode der Klasse
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
 
-// Legt Lerneinheitobjekt an.
-//Sind bereits in der MainActivity angelegt
+            //LEGT Platzhalter Leerobjekt
+            Lesson LEER = new Lesson(1,1,"title",1001,20,true);
 
-        Lesson lesson1 =new Lesson(5000, 1, "Stakeholdermanagement", 1111, 60, true);
-        Lesson lesson2 =new Lesson(5001, 2, "Shareholdervalue", 1111, 180, true);
-        Lesson lesson3 =new Lesson(5002, 3, "Grundgesetz", 3333, 99, true);
+//SpinnerObjekt für Lerneinheitauswahl
+        Spinner spinnerLesson = (Spinner) findViewById(R.id.spinnerLesson);
+
+//Array Adapter für Kursauswahl oben
+        if(lessonListeArray.size() > 0){
+
+            ArrayAdapter<Lesson> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,lessonListeArray);
+
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerLesson.setAdapter(adapter);
+        }
+
+//ÜBERGABE des Ausgewählten Objekt an die InfoView-Ansicht von Kurse
+        spinnerLesson.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                lessonUebergabe = adapterView.getItemAtPosition(i).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                }
+            }
+            );
 
     }
 
-    //Buttonfunktions Select Kurs
-    public void onClickButtonSelectCourse(View button) {
-        Toast.makeText(Lesson.this,
-                R.string.buttonFunctionTemplates,
-                Toast.LENGTH_LONG ).show();
+
+@Override
+protected void onStart () {
+    super.onStart();
+
+// Ausgabe des Inhalts von LessonListeArray
+    Log.d("#####Debug onStart#####", "Inhalt von LessonListeArray in Lesson:" +"\n" + Arrays.toString(lessonListeArray.toArray()));
+
+    String kursString = getString(R.string.buttonLesson);
+
+    if(lessonListeArray.size() > 0) {
+        for (int i = 0; i < lessonListeArray.size() -1;i++){
+        }
+
+//ListView für die Hauptansicht
+        ListView listViewLesson = (ListView) findViewById(R.id.listViewLesson);
+        ArrayAdapter<String> listViewAdapter =
+                new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,lessonListeArray);
+        listViewLesson.setAdapter(listViewAdapter);
     }
 
-    //Buttonfunktions Kurs auswählen
-    public void onClickButtonAddCourse(View button) {
-        Toast.makeText(Lesson.this,
-                R.string.buttonFunctionTemplates,
-                Toast.LENGTH_LONG ).show();
+}
+
+
+//Seitenwechsel Lesson Info Kurs
+    public void onClickLessonInfo(View button) {
+        Intent changeIntent = new Intent(Lesson.this, LessonInfo.class);
+        startActivity(changeIntent);
     }
+
+//Seitenwechsel Lesson Info Edit
+    public void onClickLessonEdit(View button) {
+    Intent changeIntent = new Intent(Lesson.this, LessonEdit.class);
+    startActivity(changeIntent);
+}
+
+//Buttonfunktion für AddButton
+
+    public void onClickAddLesson(View button) {
+//Seitenwechsel Kurse hinzufügen
+        Intent changeIntent = new Intent(Lesson.this, LessonAdd.class);
+        startActivity(changeIntent);
+
+    }
+
+//Gibt Daten aus dem Objekt per String zurück, wird benötigt für Spinner und ListView
+    @Override
+    public String toString() {
+//Stringverknüpftung für das Präfix Kurs
+        return "Nr:"+lessonNo+"#"+lessonTitle +"#Time:"+lessonTime+ "#"+lessonTimeSet+"#"+courseRelated+"#"
+                ;
+    }
+
 }

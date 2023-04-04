@@ -2,28 +2,15 @@ package com.example.studyapp4iu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import android.os.Bundle;
-import android.widget.EditText;
-
-import com.google.android.material.textfield.TextInputEditText;
-
-import org.w3c.dom.Text;
 
 public class CourseEdit extends AppCompatActivity {
 
@@ -103,6 +90,12 @@ public class CourseEdit extends AppCompatActivity {
             Courses.courseListeArray.set(i,courseNo+"#"+courseNameShort+"#"+courseIubhId+ "#"+courseSem+"#" +courseNameLong+"#"+courseID);
         }
     }
+
+//Ausgabe Toast Kurs geändert
+        Toast.makeText(CourseEdit.this,
+                R.string.buttonChangeCourse2,
+                Toast.LENGTH_LONG ).show();
+
 
 // Ausgabe des Inhalts von courseListeArray
             Log.d("#####Debug on EditKurs#####", "Inhalt von courseListeArray in CoursEdit:" +"\n" + Arrays.toString(Courses.courseListeArray.toArray()));

@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         @NonNull ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
 //Erzeugen von Dummy Objekte für Kurse, Lessons, Zeiteinheiten
 // Legt Kursobjekt an.
         Courses bwl= new Courses(1000, 1, "BWL","Betriebswirtschaft 1","BBWL01",1);
@@ -31,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
         Courses.courseListeArray.add(recht);
 
 // Legt Lerneinheitobjekt an.
-        Lesson lesson1 =new Lesson(5000, 1, "Stakeholdermanagement", 1111, 60, true);
-        Lesson lesson2 =new Lesson(5001, 2, "Shareholdervalue", 1111, 180, true);
-        Lesson lesson3 =new Lesson(5002, 3, "Grundgesetz", 3333, 99, true);
+        Lesson lesson1 =new Lesson(5000, 1, "Stakeholdermanagement", 1000, 60, true);
+        Lesson.lessonListeArray.add(lesson1);
+        Lesson lesson2 =new Lesson(5001, 2, "Shareholdervalue", 1000, 180, true);
+        Lesson.lessonListeArray.add(lesson2);
+        Lesson lesson3 =new Lesson(5002, 3, "Grundgesetz", 1002, 99, true);
+        Lesson.lessonListeArray.add(lesson3);
+
     };
 
     public void onClickButton(View button) {

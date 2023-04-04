@@ -121,13 +121,12 @@ tools:context=".CourseInfo">
         android:background="#009688"
         android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP Name lang: Betriebswirtschaftslehre"
+        android:text="TEMP Kursbeschreibung: Betriebswirtschaftslehre einführung"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="23sp"        />
+        android:textSize="17sp"        />
 
-    <TextView
-        android:id="@+id/textView5"
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
