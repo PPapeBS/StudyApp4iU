@@ -235,7 +235,7 @@
         android:backgroundTint="#FFCA28"
         android:fontFamily="monospace"
         android:onClick="onClickAddLesson"
-        android:text="@string/buttonChangeLessons"
+        android:text="@string/buttonAddLessons2"
         android:textSize="23sp" />
 
     <Space
