@@ -48,6 +48,37 @@
         android:orientation="vertical"></LinearLayout>
 
     <Spinner
+        android:id="@+id/spinnerLessonCourses"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="#009688"
+        android:clickable="true"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/buttonSelectCourse"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:backgroundTint="#009688"
+        android:fontFamily="monospace"
+        android:onClick="onClickSelectCourse"
+        android:text="@string/buttonSelectCourse"
+        android:textSize="23sp"        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
+    <Spinner
         android:id="@+id/spinnerLesson"
         android:layout_width="match_parent"
         android:layout_height="92dp"
@@ -105,7 +136,7 @@
         android:id="@+id/listViewLesson"
         android:layout_width="match_parent"
         android:clickable="false"
-        android:layout_height="280dp"
+        android:layout_height="180dp"
         android:background="#00BCD4"
         android:fontFamily="monospace"
         android:gravity="center"
