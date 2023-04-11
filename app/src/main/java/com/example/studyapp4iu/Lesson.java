@@ -170,7 +170,7 @@ protected void onStart () {
     @Override
     public String toString() {
 //Stringverknüpftung für das Präfix Kurs
-        return "Nr:"+lessonNo+"#"+lessonTitle +"#Time:"+lessonTime+ "#"+lessonTimeSet+"#"+courseRelated+"#"
+        return "Nr:"+lessonNo+"#"+lessonTitle +"#"+lessonTime+ "#"+lessonTimeSet+"#"+courseRelated+"#"
                 ;
     }
 

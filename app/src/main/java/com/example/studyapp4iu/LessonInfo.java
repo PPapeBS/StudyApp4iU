@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import java.util.Locale;
 
 public class LessonInfo extends AppCompatActivity {
+
+    private int seconds = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,7 @@ public class LessonInfo extends AppCompatActivity {
         int stelleZwei = Lesson.lessonUebergabe.indexOf('#', stelle + 1);
         textViewLesson2.setText(Lesson.lessonUebergabe.substring(stelle+1, stelleZwei));
 
+        //Dargestellte Zeit in Activitiy
         TextView textViewLesson3 = (TextView) findViewById(R.id.textViewLesson3);
         int stelleDrei = Lesson.lessonUebergabe.indexOf('#', stelleZwei + 1);
         textViewLesson3.setText(Lesson.lessonUebergabe.substring(stelleZwei+1, stelleDrei));
@@ -33,6 +37,20 @@ public class LessonInfo extends AppCompatActivity {
         TextView textViewLesson5 = (TextView) findViewById(R.id.textViewLesson5);
         int stellefuenf = Lesson.lessonUebergabe.indexOf('#', stelleVier + 1);
         textViewLesson5.setText(Lesson.lessonUebergabe.substring(stelleVier+1, stellefuenf));
+
+
+//Umformatierung der dargestellten Zeit
+        String secondsString = textViewLesson3.getText().toString();
+        seconds = Integer.parseInt(secondsString);
+
+        int hours = seconds / 3600;
+        int minutes = (seconds % 3600) / 60;
+        int secs = seconds % 60;
+
+        String time = String.format(Locale.getDefault(), "%d:%02d:%02d", hours, minutes, secs);
+
+//Setz den Textview auf die Variable time welche die Sekunden umwandelt in ein Zeitformt
+        textViewLesson3.setText(time);
 
 
 

@@ -65,7 +65,6 @@ public class Timer extends AppCompatActivity {
     public void onClickTimerStart(View button) {
 
         running =true;
-
     }
 
 
@@ -73,7 +72,6 @@ public class Timer extends AppCompatActivity {
     public void onClickTimerStop(View button) {
 
         running = false;
-
     }
 
     //Buttonfunktions Timer Stop

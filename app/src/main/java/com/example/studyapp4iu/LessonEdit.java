@@ -36,6 +36,7 @@ public class LessonEdit extends AppCompatActivity {
         int stelleZwei = Lesson.lessonUebergabe.indexOf('#', stelle + 1);
         textViewLesson2.setText(Lesson.lessonUebergabe.substring(stelle+1, stelleZwei));
 
+        //Dargestellte Zeit in Activitiy
         TextView textViewLesson3 = (TextView) findViewById(R.id.editLesson3);
         int stelleDrei = Lesson.lessonUebergabe.indexOf('#', stelleZwei + 1);
         textViewLesson3.setText(Lesson.lessonUebergabe.substring(stelleZwei+1, stelleDrei));

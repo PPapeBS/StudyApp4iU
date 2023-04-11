@@ -36,6 +36,8 @@ public class LessonAdd extends AppCompatActivity {
         String lessonNo = textViewCours1.getText().toString();
         TextView textViewCours2 = (TextView) findViewById(R.id.addLesson2);
         String lessonTitle = textViewCours2.getText().toString();
+
+        //Dargestellte Zeit in Activitiy
         TextView textViewCours3 = (TextView) findViewById(R.id.addLesson3);
         String lessonTime = textViewCours3.getText().toString();
         TextView textViewCours4 = (TextView) findViewById(R.id.addLesson4);
