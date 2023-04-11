@@ -139,7 +139,7 @@ protected void onStart () {
     for (int i = 0; i < courseListeArray.size() -1;i++){
     }
 
-
+// Vielleicht funktioniert das NotifyDataSetChanger()
 
 //ListView für die Hauptansicht
 // Sortiert die Liste anhand der courseNo
