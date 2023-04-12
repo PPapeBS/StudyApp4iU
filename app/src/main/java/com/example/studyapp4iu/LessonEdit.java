@@ -89,7 +89,6 @@ public class LessonEdit extends AppCompatActivity {
 //ID des Objektes soll durch den Nutzer nicht veränderbar sein
                 String lessonID = Lesson.lessonUebergabe.substring(Lesson.lessonUebergabe.length()-5,Lesson.lessonUebergabe.length());
 //Übergbit die veränderten Daten an die ArrayList
-                //               return "Nr:"+lessonNo+"#"+lessonTitle +"#Time:"+lessonTime+ "#"+lessonTimeSet+"#"+courseRelated+"#"
                 Lesson.lessonListeArray.set(i,lessonNo+"#"+lessonTitle+"#"+lessonTime+ "#"+lessonTimeSet+"#" +courseRelated+"#");
             }
         }

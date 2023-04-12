@@ -184,7 +184,7 @@ protected void onStart () {
         for (int i = 0; i < lessonListeArray.size() -1;i++){
         }
 //ListView für die Hauptansicht
-//MUSS Später noch geändert werden, zeigt alle Lerneinheiten an.
+//MUSS Später noch geändert werden, zeigt alle Lerneinheiten an und nicht nur die vom ausgewählten Kurs
         ListView listViewLesson = (ListView) findViewById(R.id.listViewLesson);
         ArrayAdapter<String> listViewAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,lessonListeArray);
@@ -237,7 +237,7 @@ protected void onStart () {
     }
 
 
-//Seitenwechsel Kursauswahl
+//Neuladen der Seite über Kursauswahl
     public void onClickSelectCourse (View button) {
         recreate();
     }

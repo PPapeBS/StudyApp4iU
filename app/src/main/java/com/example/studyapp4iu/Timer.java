@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.os.Handler;
 
@@ -16,8 +19,6 @@ public class Timer extends AppCompatActivity {
 //Variablen für Timer Sekunde, zwei x Aktivitätsprüfung per Wahrheitswert
     private int seconds = 0;
     private boolean running;
-    private boolean courseSelected = false;
-    private boolean lessonSelected = false;
 
 
     @Override
@@ -25,41 +26,81 @@ public class Timer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 //Startet die Hintergrundaktivität Timer, die auf Running = True wartet
-
         runTimer();
-    }
 
-//IF Abfrage Funktioniert nicht, verwendet beide
-//Buttonfunktions Select Kurs
-    public void onClickSelectCourse(View button) {
-        if (courseSelected = true); {
-                Toast.makeText(Timer.this,
-                R.string.buttonFunctionTemplates,
-                Toast.LENGTH_LONG ).show();
+
+//SpinnerObjekt für Kursauswahl innerhalb von dem Timer
+        Spinner spinnerCourses = (Spinner) findViewById(R.id.spinnerSelectCourse);
+
+
+//Array Adapter für Kursauswahl oben innerhalb von dem Timer
+        if(Courses.courseListeArray.size() > 0){
+
+            ArrayAdapter<Courses> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Courses.courseListeArray);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerCourses.setAdapter(adapter);
+        }
+
+//ÜBERGABE des Ausgewählten KursObjekt an die zur Auswahl der Timer-Sicht
+        spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            Courses.courseUebergabe = adapterView.getItemAtPosition(i).toString();
             }
 
-        if (courseSelected = false); {
-            Toast.makeText(Timer.this,
-                    R.string.requestSelectCourse,
-                    Toast.LENGTH_LONG ).show();
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
         }
+        );
+
+//Lerneinheiten
+//SpinnerObjekt für Lerneinheitenauswahl innerhalb von dem Timer
+        Spinner spinnerLesson = (Spinner) findViewById(R.id.spinnerSelectLesson);
+
+
+//Array Adapter für Lerneinheitenauswahl oben innerhalb von dem Timer
+        if(Lesson.lessonListeArray.size() > 0){
+
+            ArrayAdapter<Courses> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Lesson.lessonListeArray);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerLesson.setAdapter(adapter);
+        }
+
+//ÜBERGABE des Ausgewählten LerneinheitObjekt an die zur Auswahl der Timer-Sicht
+        spinnerLesson.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            Lesson.lessonUebergabe = adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        }
+        );
+
+
+
+
+
+
     }
+
+//Buttonfunktions Select Kurs
+    public void onClickSelectCourse(View button) {
+        Toast.makeText(Timer.this,
+                R.string.buttonFunctionTemplates,
+                Toast.LENGTH_LONG ).show();
+
+    }
+
 //Buttonfunktions Select Lerneinheit
-//IF Abfrage Funktioniert nicht, verwendet beide
     public void onClickSelectLesson(View button) {
-        if (courseSelected = true); {
             Toast.makeText(Timer.this,
                     R.string.buttonFunctionTemplates,
                     Toast.LENGTH_LONG ).show();
-        }
-
-        if (courseSelected = false); {
-            Toast.makeText(Timer.this,
-                    R.string.requestSelectLessons,
-                    Toast.LENGTH_LONG ).show();
-        }
     }
-
 
 //Buttonfunktion Timer Start
     public void onClickTimerStart(View button) {
@@ -67,16 +108,50 @@ public class Timer extends AppCompatActivity {
         running =true;
     }
 
-
-    //Buttonfunktion Timer Stop
+//Buttonfunktion Timer Stop
     public void onClickTimerStop(View button) {
 
         running = false;
     }
 
-    //Buttonfunktions Timer Stop
+//Buttonfunktions Timer Stop
     public void onClickTimerEnd(View button) {
         running = false;
+
+//Hier will ich das Lernobjekt neu schreiben, dafür die aktuelle Zeit auf die gespeicherte Zeit addieren
+//Löscht das aktuelle Lernobjekt aus dem Array
+        for(int i = 0; i < Lesson.lessonListeArray.size() -1; i++) {
+            if (Lesson.lessonListeArray.get(i).toString().contains(Lesson.lessonUebergabe)) {
+                Lesson.lessonListeArray.remove(i);
+            }
+
+//Zerlegt den LessonÜbergabe String in die Bestandteile
+            int stelle = Lesson.lessonUebergabe.indexOf("#");
+            String lessonNo= new String(Lesson.lessonUebergabe.substring(0, stelle));
+
+            int stelleZwei = Lesson.lessonUebergabe.indexOf('#', stelle + 1);
+            String lessonTitle= new String(Lesson.lessonUebergabe.substring(stelle+1, stelleZwei));
+
+//Gebuchte Zeit der Lerneinheit
+            int stelleDrei = Lesson.lessonUebergabe.indexOf('#', stelleZwei + 1);
+            String lessonTime= new String(Lesson.lessonUebergabe.substring(stelleZwei+1, stelleDrei));
+//Wandelt den String in Int um und addiert die aktuelle Sekundenzahl
+            int lessonTimeInt = Integer.parseInt(lessonTime) + seconds;
+//Wandelt den Int zurück in String
+            String newLessonTime = Integer.toString(lessonTimeInt);
+            lessonTime = newLessonTime;
+
+            int stelleVier = Lesson.lessonUebergabe.indexOf('#', stelleDrei + 1);
+            String lessonTimeSet= new String(Lesson.lessonUebergabe.substring(stelleDrei+1, stelleVier));
+
+            int stelleFuenf = Lesson.lessonUebergabe.indexOf('#', stelleVier + 1);
+            String courseRelated= new String (Lesson.lessonUebergabe.substring(stelleVier+1, stelleFuenf));
+
+//Verändert das Array und übergibt alle Daten inklusive der neuen Zeit
+            Lesson.lessonListeArray.set(i,lessonNo+"#"+lessonTitle+"#"+lessonTime+ "#"+lessonTimeSet+"#" +courseRelated+"#");
+
+        }
+//Setz die Zeit wieder auf 0 zurück
         seconds = 0;
 
         Toast.makeText(Timer.this,
