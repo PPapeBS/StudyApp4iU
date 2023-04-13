@@ -138,34 +138,40 @@ protected void onStart () {
     String kursString = getString(R.string.buttonCourse);
 
     if(courseListeArray.size() > 0) {
-    for (int i = 0; i < courseListeArray.size() -1;i++){
+    for (int i = 0; i < courseListeArray.size();i++){
     }
 
-// Vielleicht funktioniert das NotifyDataSetChanger()
 
-//ListView für die Hauptansicht
-//Sortiert die Liste anhand der courseNo
-//Funktioniert mit dem Editieren nicht
-
-/*
-
-
-        Collections.sort(courseListeArray, new Comparator<Courses>() {
-            @Override
-            public int compare(Courses o1, Courses o2) {
-                return Integer.compare(o1.getCourseNo(), o2.getCourseNo());
-            }
-        });
- */
         ListView listViewCourses = (ListView) findViewById(R.id.listViewCourses);
         ArrayAdapter<String> listViewAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
         listViewCourses.setAdapter(listViewAdapter);
     }
 
-
-
 }
+    @Override
+    protected void onResume () {
+        super.onResume();
+
+//ListView für die Hauptansicht
+//Sortiert die Liste anhand der courseNo
+//Funktioniert mit dem Editieren nicht
+/*
+        Log.d("##Debug Listensortierung VORHER##", "Der Wert von CourseListArray ist:" + Arrays.toString(Courses.courseListeArray.toArray()));
+        Collections.sort(courseListeArray, new Comparator<Courses>() {
+            @Override
+            public int compare(Courses o1, Courses o2) {
+
+                return Integer.compare(o1.getCourseNo(), o2.getCourseNo());
+
+            }
+        });
+        Log.d("##Debug Listensortierung NACHHER##", "Der Wert von CourseListArray ist:" + Arrays.toString(Courses.courseListeArray.toArray()));
+*/
+
+    }
+
+
 
 
 //Seitenwechsel Kurse Info

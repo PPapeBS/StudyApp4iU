@@ -13,7 +13,6 @@ import com.example.studyapp4iu.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-
 // Programm start der MainActivity wird benötigt damit irgendwas angezeigt wird
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Courses.courseListeArray.add(bwl);
         Courses java= new Courses(1001, 2, "JAVA","Einführung in die Programmierung mit Java","IOBP01",2);
         Courses.courseListeArray.add(java);
-        Courses recht= new Courses(1002, 3, "RECHT 1","Einführung in Recht","BREC01",1);
+        //KURS NUMMER 10 ändern
+        Courses recht= new Courses(1002, 10, "RECHT 1","Einführung in Recht","BREC01",1);
         Courses.courseListeArray.add(recht);
 
 // Legt Lerneinheitobjekt an.
@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         Lesson.lessonListeArray.add(lesson2);
         Lesson lesson3 =new Lesson(5002, 3, "Grundgesetz", 1002, 99, true);
         Lesson.lessonListeArray.add(lesson3);
+
+
+
 
     };
 

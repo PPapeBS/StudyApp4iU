@@ -3,6 +3,7 @@ package com.example.studyapp4iu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.os.Handler;
 
+import java.util.Arrays;
 import java.util.Locale;
 import android.widget.TextView;
 
@@ -27,6 +29,7 @@ public class Timer extends AppCompatActivity {
         setContentView(R.layout.activity_timer);
 //Startet die Hintergrundaktivität Timer, die auf Running = True wartet
         runTimer();
+
 
 
 //SpinnerObjekt für Kursauswahl innerhalb von dem Timer
@@ -92,7 +95,7 @@ public class Timer extends AppCompatActivity {
         Toast.makeText(Timer.this,
                 R.string.buttonFunctionTemplates,
                 Toast.LENGTH_LONG ).show();
-
+        recreate();
     }
 
 //Buttonfunktions Select Lerneinheit
@@ -100,6 +103,7 @@ public class Timer extends AppCompatActivity {
             Toast.makeText(Timer.this,
                     R.string.buttonFunctionTemplates,
                     Toast.LENGTH_LONG ).show();
+        recreate();
     }
 
 //Buttonfunktion Timer Start
@@ -118,16 +122,29 @@ public class Timer extends AppCompatActivity {
     public void onClickTimerEnd(View button) {
         running = false;
 
+Log.d("##Debug onClickTimerEnd VORHER##", "Der Wert von LessonÜbergabe ist:" + Lesson.lessonUebergabe);
+
+Log.d("##Debug onClickTimerEnd VORHER##", "Der Wert von LessonListArray ist:" + Arrays.toString(Lesson.lessonListeArray.toArray()));
+
 //Hier will ich das Lernobjekt neu schreiben, dafür die aktuelle Zeit auf die gespeicherte Zeit addieren
 //Löscht das aktuelle Lernobjekt aus dem Array
-        for(int i = 0; i < Lesson.lessonListeArray.size() -1; i++) {
+
+//VORHER FUnktionieert nicht
+//        for(int i = 0; i < Lesson.lessonListeArray.size()-1; i++) {
+
+            for(int i = 0; i < Lesson.lessonListeArray.size(); i++) {
             if (Lesson.lessonListeArray.get(i).toString().contains(Lesson.lessonUebergabe)) {
                 Lesson.lessonListeArray.remove(i);
-            }
+
+
+
+Log.d("##Debug onClickTimerEnd NACHHER##", "Der Wert von LessonListArray ist:" + Arrays.toString(Lesson.lessonListeArray.toArray()));
+
 
 //Zerlegt den LessonÜbergabe String in die Bestandteile
             int stelle = Lesson.lessonUebergabe.indexOf("#");
             String lessonNo= new String(Lesson.lessonUebergabe.substring(0, stelle));
+            lessonNo = lessonNo.replace("Nr:", "");
 
             int stelleZwei = Lesson.lessonUebergabe.indexOf('#', stelle + 1);
             String lessonTitle= new String(Lesson.lessonUebergabe.substring(stelle+1, stelleZwei));
@@ -146,10 +163,25 @@ public class Timer extends AppCompatActivity {
 
             int stelleFuenf = Lesson.lessonUebergabe.indexOf('#', stelleVier + 1);
             String courseRelated= new String (Lesson.lessonUebergabe.substring(stelleVier+1, stelleFuenf));
+           int courseRelated2 = Integer.parseInt(courseRelated);
+
 
 //Verändert das Array und übergibt alle Daten inklusive der neuen Zeit
-            Lesson.lessonListeArray.set(i,lessonNo+"#"+lessonTitle+"#"+lessonTime+ "#"+lessonTimeSet+"#" +courseRelated+"#");
 
+//Lesson newTime =new Lesson(5000, 1, "", 1, 6, true);
+Lesson newTime =new Lesson(2, 1, "NEUES OBJEKT", 1000, 60, true);
+
+                newTime.setLessonId(5000);
+                newTime.setLessonNo(Integer.parseInt(lessonNo));
+                newTime.setLessonTitle(lessonTitle);
+                newTime.setCourseRelated(courseRelated2);
+                newTime.setLessonTime(lessonTimeInt);
+                newTime.setLessonTimeSet(true);
+
+      Lesson.lessonListeArray.add(newTime);
+
+Log.d("##Debug onClickTimerEnd am Ende##", "Der Wert von LessonListArray ist:" + Arrays.toString(Lesson.lessonListeArray.toArray()));
+            }
         }
 //Setz die Zeit wieder auf 0 zurück
         seconds = 0;
@@ -157,6 +189,7 @@ public class Timer extends AppCompatActivity {
         Toast.makeText(Timer.this,
                 R.string.buttonEndLessons,
                 Toast.LENGTH_LONG ).show();
+        recreate();
     }
 
 //Methode runTimer, wird zum start ausgeführt

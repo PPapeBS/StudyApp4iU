@@ -55,9 +55,10 @@ public class LessonEdit extends AppCompatActivity {
     public void onClickDeleteLesson(View button) {
 
 //Löscht das aktuelle Lernobjekt aus dem Array
-        for(int i = 0; i < Lesson.lessonListeArray.size() -1; i++) {
+        for(int i = 0; i < Lesson.lessonListeArray.size(); i++) {
             if (Lesson.lessonListeArray.get(i).toString().contains(Lesson.lessonUebergabe)) {
                 Lesson.lessonListeArray.remove(i);
+
             }
 
 //Seitenwechsel auf Kurse zurück
@@ -83,13 +84,14 @@ public class LessonEdit extends AppCompatActivity {
         TextView textViewLesson5 = (TextView) findViewById(R.id.editLesson5);
         String courseRelated = textViewLesson5.getText().toString();
 
-        for(int i = 0; i < Lesson.lessonListeArray.size() -1; i++) {
+        for(int i = 0; i < Lesson.lessonListeArray.size(); i++) {
             if(Lesson.lessonListeArray.get(i).toString().contains(Lesson.lessonUebergabe)) {
 
 //ID des Objektes soll durch den Nutzer nicht veränderbar sein
                 String lessonID = Lesson.lessonUebergabe.substring(Lesson.lessonUebergabe.length()-5,Lesson.lessonUebergabe.length());
 //Übergbit die veränderten Daten an die ArrayList
                 Lesson.lessonListeArray.set(i,lessonNo+"#"+lessonTitle+"#"+lessonTime+ "#"+lessonTimeSet+"#" +courseRelated+"#");
+
             }
         }
 

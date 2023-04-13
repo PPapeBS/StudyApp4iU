@@ -53,11 +53,14 @@ public class CourseEdit extends AppCompatActivity {
 //Buttonfunktions delete
     public void onClickDeleteCourse(View button) {
 
+
+
 //Löscht das aktuelle Kursobjekt aus dem Array
-        for(int i = 0; i < Courses.courseListeArray.size() -1; i++) {
+        for(int i = 0; i < Courses.courseListeArray.size(); i++) {
             if (Courses.courseListeArray.get(i).toString().contains(Courses.courseUebergabe)) {
                 Courses.courseListeArray.remove(i);
             }
+
 
 //Seitenwechsel auf Kurse zurück
         Intent changeIntent = new Intent(CourseEdit.this, Courses.class);
@@ -79,14 +82,12 @@ public class CourseEdit extends AppCompatActivity {
         TextView textViewCours5 = (TextView) findViewById(R.id.editCourse5);
         String courseNameLong = textViewCours5.getText().toString();
 
-
-        for(int i = 0; i < Courses.courseListeArray.size() -1; i++) {
+        for(int i = 0; i < Courses.courseListeArray.size(); i++) {
         if(Courses.courseListeArray.get(i).toString().contains(Courses.courseUebergabe)) {
 
 //ID des Objektes soll durch den Nutzer nicht veränderbar sein
             String courseID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-5,Courses.courseUebergabe.length());
 //Übergbit die veränderten Daten an die ArrayList
-            //                 return "Nr:"+courseNo+"#"+courseNameShort +"#IU:"+courseIubhId+ "#Sem:"+courseSem+"#" +courseNameLong+"#"+courseID+"#"
             Courses.courseListeArray.set(i,courseNo+"#"+courseNameShort+"#"+courseIubhId+ "#"+courseSem+"#" +courseNameLong+"#"+courseID);
         }
     }
