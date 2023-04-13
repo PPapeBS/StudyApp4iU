@@ -114,7 +114,7 @@ public class Timer extends AppCompatActivity {
         running = false;
     }
 
-//Buttonfunktions Timer Stop
+//Buttonfunktions Timer Ende
     public void onClickTimerEnd(View button) {
         running = false;
 

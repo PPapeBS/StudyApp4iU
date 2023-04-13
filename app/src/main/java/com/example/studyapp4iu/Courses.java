@@ -13,6 +13,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 import android.widget.Spinner;
 
@@ -142,9 +144,11 @@ protected void onStart () {
 // Vielleicht funktioniert das NotifyDataSetChanger()
 
 //ListView für die Hauptansicht
-// Sortiert die Liste anhand der courseNo
+//Sortiert die Liste anhand der courseNo
 //Funktioniert mit dem Editieren nicht
-        /*
+
+/*
+
 
         Collections.sort(courseListeArray, new Comparator<Courses>() {
             @Override
@@ -152,7 +156,7 @@ protected void onStart () {
                 return Integer.compare(o1.getCourseNo(), o2.getCourseNo());
             }
         });
-    */
+ */
         ListView listViewCourses = (ListView) findViewById(R.id.listViewCourses);
         ArrayAdapter<String> listViewAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
