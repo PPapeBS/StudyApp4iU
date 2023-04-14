@@ -149,27 +149,9 @@ protected void onStart () {
     }
 
 }
-    @Override
-    protected void onResume () {
-        super.onResume();
 
-//ListView für die Hauptansicht
-//Sortiert die Liste anhand der courseNo
-//Funktioniert mit dem Editieren nicht
-/*
-        Log.d("##Debug Listensortierung VORHER##", "Der Wert von CourseListArray ist:" + Arrays.toString(Courses.courseListeArray.toArray()));
-        Collections.sort(courseListeArray, new Comparator<Courses>() {
-            @Override
-            public int compare(Courses o1, Courses o2) {
 
-                return Integer.compare(o1.getCourseNo(), o2.getCourseNo());
 
-            }
-        });
-        Log.d("##Debug Listensortierung NACHHER##", "Der Wert von CourseListArray ist:" + Arrays.toString(Courses.courseListeArray.toArray()));
-*/
-
-    }
 
 
 
@@ -203,5 +185,27 @@ protected void onStart () {
         ;
     }
 
+    public void onClickSortCourse(View button) {
+//Kurs sortieren Kurse hinzufügen
+
+
+//ListView für die Hauptansicht
+//Sortiert die Liste anhand der courseNo
+
+Log.d("##Debug Listensortierung VORHER##", "Der Wert von CourseListArray ist:" + Arrays.toString(Courses.courseListeArray.toArray()));
+        Collections.sort(courseListeArray, new Comparator<Courses>() {
+            @Override
+            public int compare(Courses o1, Courses o2) {
+
+                return Integer.compare(o1.getCourseNo(), o2.getCourseNo());
+
+            }
+        });
+Log.d("##Debug Listensortierung NACHHER##", "Der Wert von CourseListArray ist:" + Arrays.toString(Courses.courseListeArray.toArray()));
+        recreate();
+
+
+
+    }
 
 }

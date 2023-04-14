@@ -73,22 +73,45 @@ public class CourseEdit extends AppCompatActivity {
 
         TextView textViewCours1 = (TextView) findViewById(R.id.editCourse1);
         String courseNo = textViewCours1.getText().toString();
+        String courseNo2 = courseNo.replace("Nr:", "");
+
         TextView textViewCours2 = (TextView) findViewById(R.id.editCourse2);
         String courseNameShort =  textViewCours2.getText().toString();
         TextView textViewCours3 = (TextView) findViewById(R.id.editCourse3);
         String courseIubhId =  textViewCours3.getText().toString();
+
         TextView textViewCours4 = (TextView) findViewById(R.id.editCourse4);
         String courseSem = textViewCours4.getText().toString();
+        String courseSem2 = courseSem.replace("Sem:", "");
+
         TextView textViewCours5 = (TextView) findViewById(R.id.editCourse5);
         String courseNameLong = textViewCours5.getText().toString();
 
         for(int i = 0; i < Courses.courseListeArray.size(); i++) {
         if(Courses.courseListeArray.get(i).toString().contains(Courses.courseUebergabe)) {
+        Courses.courseListeArray.remove(i);
 
 //ID des Objektes soll durch den Nutzer nicht veränderbar sein
             String courseID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-5,Courses.courseUebergabe.length());
+            String courseID2 = courseID.replace("#", "");
+
+
+//Erstellen des neuen Leeren CourseObjektes
+            Courses newCourse= new Courses();
+
+            newCourse.setCourseID(Integer.parseInt(courseID2));
+            newCourse.setCourseNo(Integer.parseInt(courseNo2));
+            newCourse.setCourseNameShort(courseNameShort);
+            newCourse.setCourseIubhId(courseIubhId);
+            newCourse.setCourseSem(Integer.parseInt(courseSem2));
+            newCourse.setCourseNameLong(courseNameLong);
+
+            Courses.courseListeArray.add(newCourse);
+
+
 //Übergbit die veränderten Daten an die ArrayList
-            Courses.courseListeArray.set(i,courseNo+"#"+courseNameShort+"#"+courseIubhId+ "#"+courseSem+"#" +courseNameLong+"#"+courseID);
+//Wurde entfernt und durch ein neues Objekte erstellen ersetz, damit die Sortierung funktioniert
+//            Courses.courseListeArray.set(i,courseNo+"#"+courseNameShort+"#"+courseIubhId+ "#"+courseSem+"#" +courseNameLong+"#"+courseID);
         }
     }
 

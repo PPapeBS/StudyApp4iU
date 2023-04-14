@@ -71,8 +71,6 @@ public class LessonEdit extends AppCompatActivity {
     public void onClickChangeLesson (View button) {
 
 
-        //return "Nr:"+lessonNo+"#"+lessonTitle +"#Time:"+lessonTime+ "#"+lessonTimeSet+"#"+courseRelated+"#"
-
         TextView textViewLesson1 = (TextView) findViewById(R.id.editLesson1);
         String lessonNo = textViewLesson1.getText().toString();
         TextView textViewLesson2 = (TextView) findViewById(R.id.editLesson2);

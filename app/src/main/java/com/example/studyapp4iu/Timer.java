@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.os.Handler;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import android.widget.TextView;
@@ -22,6 +23,8 @@ public class Timer extends AppCompatActivity {
     private int seconds = 0;
     private boolean running;
 
+    public static ArrayList lessonListeArrayReduziert = new ArrayList();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,8 @@ public class Timer extends AppCompatActivity {
         runTimer();
 
 
-
 //SpinnerObjekt für Kursauswahl innerhalb von dem Timer
         Spinner spinnerCourses = (Spinner) findViewById(R.id.spinnerSelectCourse);
-
 
 //Array Adapter für Kursauswahl oben innerhalb von dem Timer
         if(Courses.courseListeArray.size() > 0){
@@ -83,26 +84,18 @@ public class Timer extends AppCompatActivity {
         }
         );
 
-
-
-
-
-
     }
+
+
+
 
 //Buttonfunktions Select Kurs
     public void onClickSelectCourse(View button) {
-        Toast.makeText(Timer.this,
-                R.string.buttonFunctionTemplates,
-                Toast.LENGTH_LONG ).show();
         recreate();
     }
 
 //Buttonfunktions Select Lerneinheit
     public void onClickSelectLesson(View button) {
-            Toast.makeText(Timer.this,
-                    R.string.buttonFunctionTemplates,
-                    Toast.LENGTH_LONG ).show();
         recreate();
     }
 
@@ -122,6 +115,29 @@ public class Timer extends AppCompatActivity {
     public void onClickTimerEnd(View button) {
         running = false;
 
+        //Zerlegt den LessonÜbergabe String in die Bestandteile
+        int stelle = Lesson.lessonUebergabe.indexOf("#");
+        String lessonNo= new String(Lesson.lessonUebergabe.substring(0, stelle));
+
+        int stelleZwei = Lesson.lessonUebergabe.indexOf('#', stelle + 1);
+        String lessonTitle= new String(Lesson.lessonUebergabe.substring(stelle+1, stelleZwei));
+
+//Gebuchte Zeit der Lerneinheit
+        int stelleDrei = Lesson.lessonUebergabe.indexOf('#', stelleZwei + 1);
+        String lessonTime= new String(Lesson.lessonUebergabe.substring(stelleZwei+1, stelleDrei));
+//Wandelt den String in Int um und addiert die aktuelle Sekundenzahl
+        int lessonTimeInt = Integer.parseInt(lessonTime) + seconds;
+//Wandelt den Int zurück in String
+        String newLessonTime = Integer.toString(lessonTimeInt);
+        lessonTime = newLessonTime;
+
+        int stelleVier = Lesson.lessonUebergabe.indexOf('#', stelleDrei + 1);
+        String lessonTimeSet= new String(Lesson.lessonUebergabe.substring(stelleDrei+1, stelleVier));
+
+        int stelleFuenf = Lesson.lessonUebergabe.indexOf('#', stelleVier + 1);
+        String courseRelated= new String (Lesson.lessonUebergabe.substring(stelleVier+1, stelleFuenf));
+        int courseRelated2 = Integer.parseInt(courseRelated);
+
 Log.d("##Debug onClickTimerEnd VORHER##", "Der Wert von LessonÜbergabe ist:" + Lesson.lessonUebergabe);
 
 Log.d("##Debug onClickTimerEnd VORHER##", "Der Wert von LessonListArray ist:" + Arrays.toString(Lesson.lessonListeArray.toArray()));
@@ -129,60 +145,19 @@ Log.d("##Debug onClickTimerEnd VORHER##", "Der Wert von LessonListArray ist:" + 
 //Hier will ich das Lernobjekt neu schreiben, dafür die aktuelle Zeit auf die gespeicherte Zeit addieren
 //Löscht das aktuelle Lernobjekt aus dem Array
 
-//VORHER FUnktionieert nicht
-//        for(int i = 0; i < Lesson.lessonListeArray.size()-1; i++) {
-
             for(int i = 0; i < Lesson.lessonListeArray.size(); i++) {
             if (Lesson.lessonListeArray.get(i).toString().contains(Lesson.lessonUebergabe)) {
-                Lesson.lessonListeArray.remove(i);
-
+                Lesson.lessonListeArray.set(i,lessonNo+"#"+lessonTitle+"#"+newLessonTime+ "#"+lessonTimeSet+"#" +courseRelated+"#");
 
 
 Log.d("##Debug onClickTimerEnd NACHHER##", "Der Wert von LessonListArray ist:" + Arrays.toString(Lesson.lessonListeArray.toArray()));
 
 
-//Zerlegt den LessonÜbergabe String in die Bestandteile
-            int stelle = Lesson.lessonUebergabe.indexOf("#");
-            String lessonNo= new String(Lesson.lessonUebergabe.substring(0, stelle));
-            lessonNo = lessonNo.replace("Nr:", "");
-
-            int stelleZwei = Lesson.lessonUebergabe.indexOf('#', stelle + 1);
-            String lessonTitle= new String(Lesson.lessonUebergabe.substring(stelle+1, stelleZwei));
-
-//Gebuchte Zeit der Lerneinheit
-            int stelleDrei = Lesson.lessonUebergabe.indexOf('#', stelleZwei + 1);
-            String lessonTime= new String(Lesson.lessonUebergabe.substring(stelleZwei+1, stelleDrei));
-//Wandelt den String in Int um und addiert die aktuelle Sekundenzahl
-            int lessonTimeInt = Integer.parseInt(lessonTime) + seconds;
-//Wandelt den Int zurück in String
-            String newLessonTime = Integer.toString(lessonTimeInt);
-            lessonTime = newLessonTime;
-
-            int stelleVier = Lesson.lessonUebergabe.indexOf('#', stelleDrei + 1);
-            String lessonTimeSet= new String(Lesson.lessonUebergabe.substring(stelleDrei+1, stelleVier));
-
-            int stelleFuenf = Lesson.lessonUebergabe.indexOf('#', stelleVier + 1);
-            String courseRelated= new String (Lesson.lessonUebergabe.substring(stelleVier+1, stelleFuenf));
-           int courseRelated2 = Integer.parseInt(courseRelated);
-
-
-//Verändert das Array und übergibt alle Daten inklusive der neuen Zeit
-
-//Lesson newTime =new Lesson(5000, 1, "", 1, 6, true);
-Lesson newTime =new Lesson(2, 1, "NEUES OBJEKT", 1000, 60, true);
-
-                newTime.setLessonId(5000);
-                newTime.setLessonNo(Integer.parseInt(lessonNo));
-                newTime.setLessonTitle(lessonTitle);
-                newTime.setCourseRelated(courseRelated2);
-                newTime.setLessonTime(lessonTimeInt);
-                newTime.setLessonTimeSet(true);
-
-      Lesson.lessonListeArray.add(newTime);
-
-Log.d("##Debug onClickTimerEnd am Ende##", "Der Wert von LessonListArray ist:" + Arrays.toString(Lesson.lessonListeArray.toArray()));
             }
-        }
+
+            }
+
+
 //Setz die Zeit wieder auf 0 zurück
         seconds = 0;
 
@@ -190,6 +165,10 @@ Log.d("##Debug onClickTimerEnd am Ende##", "Der Wert von LessonListArray ist:" +
                 R.string.buttonEndLessons,
                 Toast.LENGTH_LONG ).show();
         recreate();
+
+Log.d("##Debug onClickTimerEnd am Ende##", "Der Wert von LessonListArray ist:" + Arrays.toString(Lesson.lessonListeArray.toArray()));
+
+
     }
 
 //Methode runTimer, wird zum start ausgeführt

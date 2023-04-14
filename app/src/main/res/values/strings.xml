@@ -37,6 +37,8 @@
     <string name="buttonChangeCourse2">Course saved</string>
     <string name="buttonCourse">Course </string>
     <string name="buttonNoSelectCourse">No page change possible please create course</string>
+    <string name="buttonSortCourse">Sort Courses</string>
+
     <!--Fehlermeldungen -->
     <string name="errorCourseNo">"The course number must be between 1 and 2 characters long and may only consist of numbers."</string>
     <string name="errorCourseNameShort">"The short name of the course must be between 1 and 8 characters long."</string>

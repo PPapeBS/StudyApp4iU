@@ -93,14 +93,8 @@ public class Lesson extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
 
-//LEGT Platzhalter Leerobjekt
-        Lesson LEER = new Lesson(1,1,"title",1001,20,true);
-
 //SpinnerObjekt für Kursauswahl innerhalb von Lerneinheiten
         Spinner spinnerCourses = (Spinner) findViewById(R.id.spinnerLessonCourses);
-
-
-
 
 //Array Adapter für Kursauswahl oben innerhalb von Lerneinheiten
         if(Courses.courseListeArray.size() > 0){
@@ -109,63 +103,7 @@ public class Lesson extends AppCompatActivity {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerCourses.setAdapter(adapter);
         }
-/*
 
-// Auskommentiert damit Programm nicht mehr abstürzt wenn man vorher nicht die KurseActivity geöffnet hat
-
-//ÜBERGABE des Ausgewählten KursObjekt an die zur Auswahl der Lesson-Sicht
-        spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-        @Override
-        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-             Courses.courseUebergabe = adapterView.getItemAtPosition(i).toString();
-             }
-
-             @Override
-             public void onNothingSelected(AdapterView<?> adapterView) {
-             }
-             }
-        );
-
-
-//SpinnerObjekt für Lerneinheitauswahl
-        Spinner spinnerLesson = (Spinner) findViewById(R.id.spinnerLesson);
-
-//Array Adapter für Lerneinheitenauswahl oben, abgleich ob die ID-Lerneinheit sich auf einen Kurs bezieht
-        if(Lesson.lessonListeArray.size() > 0){
-//Entnimmt die Kurs-ID Aus dem ArrayString von dem Kursarray
-            String kursID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-5,Courses.courseUebergabe.length());
-            for(int i = 0; i < lessonListeArray.size()-1; i ++ ) {
-//Entnimmt die Lerneinheit-ID aus dem ArrayString von dem LerneinheitArray
-                String lessonID = lessonListeArray.get(i).toString().substring(lessonListeArray.get(i).toString().length()-5,Lesson.lessonListeArray.get(i).toString().length());
-//Prüfung ob KursID und LessonID gleich sind
-                if(kursID.equals(lessonID)) {
-//Falls die Listen gleich sind füge das Objekt zur reduzierten ListArray hinzu
-                    lessonListeArrayReduziert.add(lessonListeArray.get(i));
-                }
-            }
-//Über den Adapter wird das das Spinner Objekt mit dem Array verbunden und zeigt die Lerneinheiten an welche sich auf Kurs beziehen
-            ArrayAdapter<Lesson> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,lessonListeArrayReduziert);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnerLesson.setAdapter(adapter);
-            adapter.notifyDataSetChanged();
-            spinnerLesson.invalidate();
-
-        }
-
-
-//Dient zur Übergabe des Ausgewählten Objekt an die InfoView-Ansicht von Lerneinheiten
-        spinnerLesson.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-         @Override
-         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-             lessonUebergabe = adapterView.getItemAtPosition(i).toString();
-             }
-             @Override
-             public void onNothingSelected(AdapterView<?> adapterView) {
-             }
-             }
-        );
-
- */
     }
 
 
@@ -187,18 +125,15 @@ protected void onStart () {
         for (int i = 0; i < lessonListeArray.size();i++){
         }
 //ListView für die Hauptansicht
-//MUSS Später noch geändert werden, zeigt alle Lerneinheiten an und nicht nur die vom ausgewählten Kurs
         ListView listViewLesson = (ListView) findViewById(R.id.listViewLesson);
         ArrayAdapter<String> listViewAdapter =
-                new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,lessonListeArray);
+                new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,lessonListeArrayReduziert);
         listViewLesson.setAdapter(listViewAdapter);
     }
-
 }
 
-
-    @Override
-    protected void onResume () {
+@Override
+protected void onResume () {
         super.onResume();
 
 
@@ -206,8 +141,6 @@ protected void onStart () {
 //SpinnerObjekt für Lerneinheitauswahl
         Spinner spinnerLesson = (Spinner) findViewById(R.id.spinnerLesson);
         Spinner spinnerCourses = (Spinner) findViewById(R.id.spinnerLessonCourses);
-
-
 
 //Löscht die
         lessonListeArrayReduziert.clear();

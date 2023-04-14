@@ -36,6 +36,7 @@
     <string name="buttonChangeCourse2">Kurs gespeichert</string>
     <string name="buttonCourse">Kurs</string>
     <string name="buttonNoSelectCourse">Kein Seitenwechsel möglich bitte Kurs erstellen</string>
+    <string name="buttonSortCourse">Kurse sortieren</string>
         <!--Fehlermeldungen -->
         <string name="errorCourseNo">"Die Kursnummer muss zwischen 1 und 2 Stellen lang sein und darf nur aus Zahlen bestehen."</string>
         <string name="errorCourseNameShort">"Der Kurzname des Kurses muss zwischen 1 und 8 Zeichen lang sein."</string>

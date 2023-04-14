@@ -156,13 +156,25 @@
         android:id="@+id/listViewCourses"
         android:layout_width="match_parent"
         android:clickable="false"
-        android:layout_height="280dp"
+        android:layout_height="300dp"
         android:background="#009688"
         android:fontFamily="monospace"
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="23sp" />
+
+    <Button
+        android:id="@+id/buttonSortCourse"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:backgroundTint="#009688"
+        android:fontFamily="monospace"
+        android:onClick="onClickSortCourse"
+        android:text="@string/buttonSortCourse"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
 
 
     />
