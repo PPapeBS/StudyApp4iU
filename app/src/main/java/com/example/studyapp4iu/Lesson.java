@@ -87,7 +87,7 @@ public class Lesson extends AppCompatActivity {
     }
 
 
-    //Start Methode der Klasse
+//Start Methode der Klasse
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,7 +108,6 @@ public class Lesson extends AppCompatActivity {
 
 
 
-
 @Override
 protected void onStart () {
     super.onStart();
@@ -118,8 +117,6 @@ protected void onStart () {
     Log.d("##Debug onStart##", "Inhalt von LessonListeArray in Lesson:" + Arrays.toString(lessonListeArray.toArray()));
 // Ausgabe des Inhalts von CourseListeArray
     Log.d("##Debug onStart##", "Inhalt von CourseListeArray in Lesson:"  + Arrays.toString(Courses.courseListeArray.toArray()));
-
-    String kursString = getString(R.string.buttonLesson);
 
     if(lessonListeArray.size() > 0) {
         for (int i = 0; i < lessonListeArray.size();i++){
@@ -136,18 +133,16 @@ protected void onStart () {
 protected void onResume () {
         super.onResume();
 
-
-
 //SpinnerObjekt für Lerneinheitauswahl
         Spinner spinnerLesson = (Spinner) findViewById(R.id.spinnerLesson);
         Spinner spinnerCourses = (Spinner) findViewById(R.id.spinnerLessonCourses);
 
-//Löscht die
+//Löscht die ArrayList
         lessonListeArrayReduziert.clear();
+//Zugriff auf Courseübergabe innerhalb der onResume Methode
         Courses.courseUebergabe = spinnerCourses.getSelectedItem().toString();
 
-
-//Array Adapter für Lerneinheitenauswahl oben
+//Array Adapter für Lerneinheitenauswahl oben innerhalb der Lerneinheit
         if(lessonListeArray.size() > 0){
         String kursID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-5,Courses.courseUebergabe.length());
         //ALter Code funktioniert nicht

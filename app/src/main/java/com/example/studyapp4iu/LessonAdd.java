@@ -5,15 +5,54 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class LessonAdd extends AppCompatActivity {
+
+    static String kursID2 ="";
+    public static String courseAuswahl = "";
+    public static ArrayList courseAuswahlReduziert = new ArrayList();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_add);
+
+//SpinnerObjekt für Kursauswahl innerhalb von Lerneinheiten
+        Spinner spinnerCourses = (Spinner) findViewById(R.id.spinnerSelectCourse);
+
+//Array Adapter für Kursauswahl oben innerhalb von Lerneinheiten
+        if(Courses.courseListeArray.size() > 0){
+
+            ArrayAdapter<Courses> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Courses.courseListeArray);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerCourses.setAdapter(adapter);
+        }
+
+
+//Dient zur Übergabe des Ausgewählten Objekt an die neue Lerneinheit
+        spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+//Hier erzeuge ich mir den String von dem Auswahlelement in Kurs Edit
+        @Override
+        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            courseAuswahl = adapterView.getItemAtPosition(i).toString();
+                                                     }
+       @Override
+       public void onNothingSelected(AdapterView<?> adapterView) {
+       }
+            }
+        );
+
+
+
     }
 //Methode zum Prüfen ob die Eingabe nummerisch ist
     private boolean istNummerisch(String str) {
@@ -40,10 +79,9 @@ public class LessonAdd extends AppCompatActivity {
         //Dargestellte Zeit in Activitiy
         TextView textViewCours3 = (TextView) findViewById(R.id.addLesson3);
         String lessonTime = textViewCours3.getText().toString();
-        TextView textViewCours4 = (TextView) findViewById(R.id.addLesson4);
-        String lessonTimeSet = textViewCours4.getText().toString();
-        TextView textViewCours5 = (TextView) findViewById(R.id.addLesson5);
-        String courseRelated = textViewCours5.getText().toString();
+//        TextView textViewCours4 = (TextView) findViewById(R.id.addLesson4);
+//        String lessonTimeSet = textViewCours4.getText().toString();
+
 
 //Erstellen des neuen Leeren CourseObjektes
         Lesson newLesson = new Lesson();
@@ -66,16 +104,27 @@ public class LessonAdd extends AppCompatActivity {
         if (lessonTitle.isEmpty() || lessonTitle.length() < 8|| lessonTitle.length() > 81 ) {
             Toast.makeText(this, R.string.errorLessonTitle, Toast.LENGTH_SHORT).show(); return;        }
 // Wenn die lessonTime leer ist oder nicht nur aus Zahlen bestehte, zeige eine Fehlermeldung und beende die Methode
-        if (istNummerisch(lessonTime) && lessonTime.length() >= 1 && lessonTime.length() <= 31536000 && Integer.parseInt(lessonTime) > 0 ) {
+        if (istNummerisch(lessonTime) && lessonTime.length() >= 0 && lessonTime.length() <= 31536000 ) {
             newLesson.setLessonTime(Integer.parseInt(lessonTime)); } else {
-            // Wenn LessonNo weniger als 1 oder mehr als 2 Stellen hat oder keine Zahl ist, zeige eine Fehlermeldung und beende die Methode
+// Wenn LessonNo weniger als 1 oder mehr als 2 Stellen hat oder keine Zahl ist, zeige eine Fehlermeldung und beende die Methode
             Toast.makeText(this, R.string.errorLessonTime, Toast.LENGTH_SHORT).show(); return;        }
 //Prüfung von Time gesetzt nicht durchführen, da es in den Methoden selbst passieren soll.
+
+//hier wird die Kurs ID abhängig von dem im Spinner ausgewählten Element gesetz
+        String kursID = courseAuswahl.substring(courseAuswahl.length()-5,courseAuswahl.length());
+        String kursID2 = kursID.replace("#", "");
+        String courseRelated = kursID2;
+
+
 // Wenn courseRelated nicht 4 Nummern lang ist, zeige eine Fehlermeldung und beendet die Methode
         if (istNummerisch(courseRelated) && courseRelated.length() == 4 && Integer.parseInt(courseRelated) >999 && Integer.parseInt(courseRelated) < 5000) {
             newLesson.setCourseRelated(Integer.parseInt(courseRelated)); } else {
             Toast.makeText(this, R.string.errorCourseRelated, Toast.LENGTH_SHORT).show(); return;        }
 
+//Prüft ob eine Zeit eingetragen ist bei Lesson Time
+        if (Integer.parseInt(lessonTime) > 0) {
+            newLesson.setLessonTimeSet(true);
+        }
         newLesson.setLessonId(newLessonId);
         newLesson.setLessonTitle(lessonTitle);
         newLesson.setLessonTime(Integer.parseInt(lessonTime));
@@ -92,7 +141,7 @@ public class LessonAdd extends AppCompatActivity {
 //DummyLesson hinzufügen
     public void onClickAddLessonDummy (View button){
 
-        Lesson lesson4 =new Lesson(1, 1, "Einführung in die Unternehmen", 1000, 6000, true);
+        Lesson lesson4 =new Lesson(1, 1, "Einführung in die Unternehmen in Deutschlands Großstädten in Hamburg & Berlin", 1000, 6000, true);
         int lesson4iD =  4999 + Lesson.lessonListeArray.size() + 1;
         lesson4.setLessonId(lesson4iD);
         int lessonCourseNo = Lesson.lessonListeArray.size() + 1;

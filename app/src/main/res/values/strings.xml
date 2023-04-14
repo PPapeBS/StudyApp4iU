@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">StudyApp4iU</string>
     <string name="app_name_Menu">Study App 4 (i) U</string>
-    <string name="version">V0.1</string>
+    <string name="version">V1.0</string>
     <string name="developedBy">Developed by: Philipp Pape</string>
 
     <!--Benennung der Menus in der MainActivity    -->
@@ -64,17 +64,19 @@
     <string name="buttonDeletLessons">Delete lesson</string>
     <string name="buttonAddLessons2">Add lesson</string>
     <string name="buttonNoSelectLesson">No page change possible please create lesson</string>
+    <string name="lessonTimeSet">Time set</string>
+    <string name="lessonTimeNotSet">No time set</string>
     <!--Fehlermeldungen -->
     <string name="errorLessonNo">"The Lessons number must be between 1 and 2 characters long and may only consist of numbers."</string>
     <string name="errorLessonTitle">"The title of the the lesson must be between 8 and 81 characters long."</string>
-    <string name="errorLessonTime">"The specified time must be at least 1 second consist only of numbers."</string>
+    <string name="errorLessonTime">"The specified time must consist only of numbers."</string>
     <string name="errorCourseRelated">"The associated course information is incorrect."</string>
 
     <!--Text im Lerneinheiten editieren und Info    -->
     <string name="textLineLessonNo">No.: </string>
     <string name="textLineTitle">Title: </string>
     <string name="textLineRelatedCourse">Related course: </string>
-    <string name="textLineTime">Time: </string>
+    <string name="textLineTime">Time in sec.: </string>
     <string name="textLineTimeSet">Time Set: </string>
 
     <!--Text im Timermenu    -->

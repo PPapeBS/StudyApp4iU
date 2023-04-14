@@ -63,17 +63,19 @@
     <string name="buttonDeletLessons">Lerneinheit löschen</string>
     <string name="buttonAddLessons2">Lerneinheit hinzufügen </string>
     <string name="buttonNoSelectLesson">Kein Seitenwechsel möglich bitte Lerneinheit erstellen</string>
-          <!--Fehlermeldungen -->
+    <string name="lessonTimeSet">Zeit gebucht</string>
+    <string name="lessonTimeNotSet">Keine Zeit verbucht</string>
+    <!--Fehlermeldungen -->
             <string name="errorLessonNo">"Die Lerneinheitnummer muss zwischen 1 und 2 Stellen lang sein und darf nur aus Zahlen bestehen."</string>
             <string name="errorLessonTitle">"Der Titel der Lerneinheit muss zwischen 8 und 81 Zeichen lang sein."</string>
-            <string name="errorLessonTime">"Die eingegebene Zeit muss mindestens 1 Sekunde betragen und darf nur aus Zahlen bestehen."</string>
+            <string name="errorLessonTime">"Die eingegebene Zeit darf nur aus Zahlen bestehen."</string>
             <string name="errorCourseRelated">"Die zugehörige Kursangabe ist fehlerhaft."</string>
 
     <!--Text im Lerneinheiten editieren und Info    -->
     <string name="textLineLessonNo">Nr.: </string>
     <string name="textLineTitle">Title: </string>
     <string name="textLineRelatedCourse">Zugehöriger Kurs: </string>
-    <string name="textLineTime">Zeit: </string>
+    <string name="textLineTime">Zeit in Sek.: </string>
     <string name="textLineTimeSet">Zeit gebucht: </string>
 
     <!--Text im Timermenu    -->

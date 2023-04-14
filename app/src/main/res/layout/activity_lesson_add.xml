@@ -146,113 +146,128 @@
             />
 
     </LinearLayout>
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
+<!-- Zeit auf true
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textAddLesson4"
+                android:layout_width="208dp"
+                android:layout_height="92dp"
+                android:background="#00BCD4"
+                android:textColor="@color/white"
+                android:fontFamily="monospace"
+                android:text="@string/textLineTimeSet"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="23sp"    />
 
-    <LinearLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addLesson4"
+                android:layout_width="208dp"
+                android:layout_height="92dp"
+                android:background="#00BCD4"
+                android:textColor="@color/white"
+                android:fontFamily="monospace"
+                android:text="true"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="23sp"
+                />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:text="" />
+-->
+    <!--Kursauswahl-->
+    <Spinner
+        android:id="@+id/spinnerSelectCourse"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textAddLesson4"
-            android:layout_width="208dp"
-            android:layout_height="92dp"
-            android:background="#00BCD4"
-            android:textColor="@color/white"
-            android:fontFamily="monospace"
-            android:text="@string/textLineTimeSet"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textSize="23sp"    />
+        android:background="#00BCD4"
+        android:clickable="true"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/addLesson4"
-            android:layout_width="208dp"
+<!--
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="92dp"
-            android:background="#00BCD4"
-            android:textColor="@color/white"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textAddLesson5"
+                android:layout_width="208dp"
+                android:layout_height="92dp"
+                android:background="#00BCD4"
+                android:textColor="@color/white"
+                android:fontFamily="monospace"
+                android:text="@string/textLineRelatedCourse"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="20sp"    />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addLesson5"
+                android:layout_width="208dp"
+                android:layout_height="92dp"
+                android:background="#00BCD4"
+                android:textColor="@color/white"
+                android:fontFamily="monospace"
+                android:text=""
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="23sp"
+                android:inputType="numberDecimal"
+                />
+
+        </LinearLayout>
+-->
+
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:text="" />
+
+
+        <Button
+            android:id="@+id/changeAddLesson"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:backgroundTint="#FFCA28"
             android:fontFamily="monospace"
-            android:text="true"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textSize="23sp"
-            />
+            android:onClick="onClickAddLesson"
+            android:text="@string/buttonAddLessons2"
+            android:textSize="23sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/changeAddTemp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:backgroundTint="#43FFD028"
+            android:fontFamily="monospace"
+            android:onClick="onClickAddLessonDummy"
+            android:text="@string/buttonAddDummyLessons"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
 
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textAddLesson5"
-            android:layout_width="208dp"
-            android:layout_height="92dp"
-            android:background="#00BCD4"
-            android:textColor="@color/white"
-            android:fontFamily="monospace"
-            android:text="@string/textLineRelatedCourse"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textSize="20sp"    />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/addLesson5"
-            android:layout_width="208dp"
-            android:layout_height="92dp"
-            android:background="#00BCD4"
-            android:textColor="@color/white"
-            android:fontFamily="monospace"
-            android:text=""
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textSize="23sp"
-            android:inputType="numberDecimal"
-            />
-
-    </LinearLayout>
-
-
-
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-
-    <Button
-        android:id="@+id/changeAddLesson"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:backgroundTint="#FFCA28"
-        android:fontFamily="monospace"
-        android:onClick="onClickAddLesson"
-        android:text="@string/buttonAddLessons2"
-        android:textSize="23sp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
-
-    <Button
-        android:id="@+id/changeAddTemp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:backgroundTint="#43FFD028"
-        android:fontFamily="monospace"
-        android:onClick="onClickAddLessonDummy"
-        android:text="@string/buttonAddDummyLessons"
-        android:textColor="@color/black"
-        android:textSize="13sp" />
-
-
-</LinearLayout>

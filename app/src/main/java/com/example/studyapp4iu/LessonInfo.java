@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 
 public class LessonInfo extends AppCompatActivity {
+
+    static String kursID2 ="";
+    public static String courseAuswahl = "";
+    public static ArrayList courseAuswahlReduziert = new ArrayList();
 
     private int seconds = 0;
 
@@ -14,6 +21,8 @@ public class LessonInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_info);
+
+
 
 
 //Anzeige des Spinner aus Lessons als ein String und durch Substring auseinandergenommen
@@ -32,11 +41,36 @@ public class LessonInfo extends AppCompatActivity {
 
         TextView textViewLesson4 = (TextView) findViewById(R.id.textViewLesson4);
         int stelleVier = Lesson.lessonUebergabe.indexOf('#', stelleDrei + 1);
-        textViewLesson4.setText(Lesson.lessonUebergabe.substring(stelleDrei+1, stelleVier));
+        if (stelleVier == -1) {
+            textViewLesson4.setText(R.string.lessonTimeNotSet);
+        } else {
+            String lessonTimeSet = Lesson.lessonUebergabe.substring(stelleDrei + 1, stelleVier);
+            if (Boolean.parseBoolean(lessonTimeSet)) {
+                textViewLesson4.setText(R.string.lessonTimeSet);
+            } else {
+                textViewLesson4.setText(R.string.lessonTimeNotSet);
+            }
+        }
 
+
+
+//Hier wird die aktuell zugehörige KursID aus dem Übergabestring extrahiert und in
+        String relatedCourseID = Lesson.lessonUebergabe.substring(Lesson.lessonUebergabe.length()-5,Lesson.lessonUebergabe.length());
+        String relatedCourseID2 = relatedCourseID.replace("#", "");
+
+//Hier wird das Kurs-Array durchsuchen um abhängig davon den momentanen Kurs anzuzeigen
+// und im Anschluss den Kurs in ein einzelnes Array zu überführen
+        for(int i = 0; i < Courses.courseListeArray.size(); i++) {
+
+            if(Courses.courseListeArray.get(i).toString().contains(relatedCourseID2)) {
+                courseAuswahlReduziert.clear();
+                courseAuswahlReduziert.add(Courses.courseListeArray.get(i));
+            }
+
+        }
+//Darstellung des zugehörigen Kurses aus der Kurs Array Liste
         TextView textViewLesson5 = (TextView) findViewById(R.id.textViewLesson5);
-        int stellefuenf = Lesson.lessonUebergabe.indexOf('#', stelleVier + 1);
-        textViewLesson5.setText(Lesson.lessonUebergabe.substring(stelleVier+1, stellefuenf));
+        textViewLesson5.setText(Arrays.toString(courseAuswahlReduziert.toArray()));
 
 
 //Umformatierung der dargestellten Zeit

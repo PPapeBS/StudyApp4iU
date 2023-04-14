@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.os.Handler;
@@ -33,56 +34,72 @@ public class Timer extends AppCompatActivity {
 //Startet die Hintergrundaktivität Timer, die auf Running = True wartet
         runTimer();
 
-
 //SpinnerObjekt für Kursauswahl innerhalb von dem Timer
         Spinner spinnerCourses = (Spinner) findViewById(R.id.spinnerSelectCourse);
 
 //Array Adapter für Kursauswahl oben innerhalb von dem Timer
-        if(Courses.courseListeArray.size() > 0){
+        if (Courses.courseListeArray.size() > 0) {
 
-            ArrayAdapter<Courses> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Courses.courseListeArray);
+            ArrayAdapter<Courses> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Courses.courseListeArray);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerCourses.setAdapter(adapter);
         }
+    }
 
-//ÜBERGABE des Ausgewählten KursObjekt an die zur Auswahl der Timer-Sicht
-        spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            Courses.courseUebergabe = adapterView.getItemAtPosition(i).toString();
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-            }
-        }
-        );
+
+
+@Override
+    protected void onResume () {
+    super.onResume();
 
 //Lerneinheiten
 //SpinnerObjekt für Lerneinheitenauswahl innerhalb von dem Timer
         Spinner spinnerLesson = (Spinner) findViewById(R.id.spinnerSelectLesson);
+        Spinner spinnerCourse = (Spinner) findViewById(R.id.spinnerSelectCourse);
 
+//Löscht die ArrayList
+    lessonListeArrayReduziert.clear();
+//Zugriff auf Courseübergabe innerhalb der onResume Methode
+    Courses.courseUebergabe = spinnerCourse.getSelectedItem().toString();
 
-//Array Adapter für Lerneinheitenauswahl oben innerhalb von dem Timer
-        if(Lesson.lessonListeArray.size() > 0){
-
-            ArrayAdapter<Courses> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Lesson.lessonListeArray);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnerLesson.setAdapter(adapter);
+//Array Adapter für Lerneinheitenauswahl oben innerhalb der Lerneinheit
+    if(Lesson.lessonListeArray.size() > 0){
+        String kursID = Courses.courseUebergabe.substring(Courses.courseUebergabe.length()-5,Courses.courseUebergabe.length());
+        for(int i = 0; i < Lesson.lessonListeArray.size(); i ++ ) {
+            String lessonID = Lesson.lessonListeArray.get(i).toString().substring(Lesson.lessonListeArray.get(i).toString().length()-5,Lesson.lessonListeArray.get(i).toString().length());
+            if(kursID.equals(lessonID)) {
+                lessonListeArrayReduziert.add(Lesson.lessonListeArray.get(i));
+            }
         }
 
-//ÜBERGABE des Ausgewählten LerneinheitObjekt an die zur Auswahl der Timer-Sicht
+        ArrayAdapter<Lesson> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,lessonListeArrayReduziert);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerLesson.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
+        spinnerLesson.invalidate();
+
+Log.d("##Debug onResume##", "Der Wert von LessonListArrayReduziert ist:" + Arrays.toString(lessonListeArrayReduziert.toArray()));
+
+    }
+
+
+
         spinnerLesson.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            Lesson.lessonUebergabe = adapterView.getItemAtPosition(i).toString();
+                Lesson.lessonUebergabe = adapterView.getItemAtPosition(i).toString();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+                }
             }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-            }
-        }
         );
+
+
 
     }
 
@@ -94,10 +111,7 @@ public class Timer extends AppCompatActivity {
         recreate();
     }
 
-//Buttonfunktions Select Lerneinheit
-    public void onClickSelectLesson(View button) {
-        recreate();
-    }
+
 
 //Buttonfunktion Timer Start
     public void onClickTimerStart(View button) {
@@ -133,6 +147,11 @@ public class Timer extends AppCompatActivity {
 
         int stelleVier = Lesson.lessonUebergabe.indexOf('#', stelleDrei + 1);
         String lessonTimeSet= new String(Lesson.lessonUebergabe.substring(stelleDrei+1, stelleVier));
+        if (Integer.parseInt(lessonTime) > 0) {
+            lessonTimeSet = "true";
+        } else {
+            lessonTimeSet = "false";
+        }
 
         int stelleFuenf = Lesson.lessonUebergabe.indexOf('#', stelleVier + 1);
         String courseRelated= new String (Lesson.lessonUebergabe.substring(stelleVier+1, stelleFuenf));

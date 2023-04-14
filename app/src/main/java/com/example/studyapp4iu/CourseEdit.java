@@ -108,10 +108,6 @@ public class CourseEdit extends AppCompatActivity {
 
             Courses.courseListeArray.add(newCourse);
 
-
-//Übergbit die veränderten Daten an die ArrayList
-//Wurde entfernt und durch ein neues Objekte erstellen ersetz, damit die Sortierung funktioniert
-//            Courses.courseListeArray.set(i,courseNo+"#"+courseNameShort+"#"+courseIubhId+ "#"+courseSem+"#" +courseNameLong+"#"+courseID);
         }
     }
 

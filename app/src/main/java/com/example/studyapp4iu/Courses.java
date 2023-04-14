@@ -141,7 +141,7 @@ protected void onStart () {
     for (int i = 0; i < courseListeArray.size();i++){
     }
 
-
+//ListView für die Hauptansicht
         ListView listViewCourses = (ListView) findViewById(R.id.listViewCourses);
         ArrayAdapter<String> listViewAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
@@ -185,11 +185,8 @@ protected void onStart () {
         ;
     }
 
-    public void onClickSortCourse(View button) {
+public void onClickSortCourse(View button) {
 //Kurs sortieren Kurse hinzufügen
-
-
-//ListView für die Hauptansicht
 //Sortiert die Liste anhand der courseNo
 
 Log.d("##Debug Listensortierung VORHER##", "Der Wert von CourseListArray ist:" + Arrays.toString(Courses.courseListeArray.toArray()));
