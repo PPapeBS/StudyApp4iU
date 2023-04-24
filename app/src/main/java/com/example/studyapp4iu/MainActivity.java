@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
      public void onClickCourses(View button) {
         Intent changeIntent = new Intent(MainActivity.this, Courses.class);
         startActivity(changeIntent);
-
     }
 
     //Seitenwechsel Lerneinheiten

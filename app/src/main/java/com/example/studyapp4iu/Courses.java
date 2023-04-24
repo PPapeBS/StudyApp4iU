@@ -32,7 +32,8 @@ public class Courses extends AppCompatActivity {
     public static String courseUebergabe = "";
 
 
-//Konstruktor für Courses
+
+    //Konstruktor für Courses
   //No-arg Constructor
   public Courses (){ }
   public Courses(int courseID, int courseNo, String courseNameShort, String courseNameLong, String courseIubhId, int courseSem) {
@@ -118,7 +119,9 @@ public class Courses extends AppCompatActivity {
         spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                courseUebergabe = adapterView.getItemAtPosition(i).toString();
+               courseUebergabe = adapterView.getItemAtPosition(i).toString();
+
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -185,6 +188,7 @@ protected void onStart () {
         ;
     }
 
+
 public void onClickSortCourse(View button) {
 //Kurs sortieren Kurse hinzufügen
 //Sortiert die Liste anhand der courseNo
@@ -204,5 +208,13 @@ Log.d("##Debug Listensortierung NACHHER##", "Der Wert von CourseListArray ist:" 
 
 
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        finish();
+    }
+
 
 }

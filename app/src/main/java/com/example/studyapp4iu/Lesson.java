@@ -69,9 +69,6 @@ public class Lesson extends AppCompatActivity {
     public void setLessonTime(int lessonTime) {
         this.lessonTime = lessonTime;
     }
-    public boolean isLessonTimeSet() {
-        return lessonTimeSet;
-    }
     public void setLessonTimeSet(boolean lessonTimeSet) {
         this.lessonTimeSet = lessonTimeSet;
     }
@@ -213,5 +210,13 @@ Log.d("##Debug onResume##", "Der Wert von LessonListArrayReduziert ist:" + Array
         return "Nr:"+lessonNo+"#"+lessonTitle +"#"+lessonTime+ "#"+lessonTimeSet+"#"+courseRelated+"#"
                 ;
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        finish();
+    }
+
+
 
 }

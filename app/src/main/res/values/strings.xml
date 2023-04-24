@@ -85,6 +85,7 @@
     <string name="buttonCreateLessons">Create lesson</string>
     <string name="buttonEndLessons">End lesson</string>
     <string name="buttonTimerStart">start</string>
-    <string name="buttonTimerStop">stop</string>
+    <string name="buttonTimerStop">pause</string>
+    <string name="buttonTimerReset">reset</string>
 
 </resources>

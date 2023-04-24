@@ -111,6 +111,12 @@ Log.d("##Debug onResume##", "Der Wert von LessonListArrayReduziert ist:" + Array
         recreate();
     }
 
+//Buttonfunktion Timer Reset
+    public void onClickTimerReset(View button) {
+
+        running =false;
+        seconds = 0;
+    }
 
 
 //Buttonfunktion Timer Start

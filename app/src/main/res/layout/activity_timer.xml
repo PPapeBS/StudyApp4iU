@@ -93,6 +93,20 @@
         android:textColor="@color/white"
         android:textSize="23sp" />
 
+
+    <Button
+        android:id="@+id/Button4"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:backgroundTint="#43FFD028"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:onClick="onClickTimerReset"
+        android:text="@string/buttonTimerReset"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
@@ -109,10 +123,13 @@
         android:textSize="56sp"
         />
 
+
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:text="" />
+
 
 
     <RadioGroup
@@ -150,6 +167,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="23sp" />
+
+
     </RadioGroup>
 
 

@@ -114,17 +114,17 @@
             android:layout_height="10dp"
             android:text="" />
 
-        <TextView
-            android:id="@+id/textViewLesson5"
-            android:layout_width="match_parent"
-            android:layout_height="92dp"
-            android:background="#00BCD4"
-            android:textColor="@color/white"
-            android:fontFamily="monospace"
-            android:text="TEMP:Kurse zugehörig"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textSize="23sp"        />
+    <TextView
+        android:id="@+id/textViewLesson5"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:background="#00BCD4"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="TEMP:Kurse zugehörig"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
 
         <Space
             android:layout_width="match_parent"

@@ -141,7 +141,7 @@ public class LessonAdd extends AppCompatActivity {
 //DummyLesson hinzufügen
     public void onClickAddLessonDummy (View button){
 
-        Lesson lesson4 =new Lesson(1, 1, "Einführung in die Unternehmen in Deutschlands Großstädten in Hamburg & Berlin", 1000, 6000, true);
+        Lesson lesson4 =new Lesson(1, 1, "Einführung in die Unternehmen in deutschen Großstädten in Hamburg & Berlin", 1000, 6000, true);
         int lesson4iD =  4999 + Lesson.lessonListeArray.size() + 1;
         lesson4.setLessonId(lesson4iD);
         int lessonCourseNo = Lesson.lessonListeArray.size() + 1;

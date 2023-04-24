@@ -79,6 +79,8 @@ public class CourseEdit extends AppCompatActivity {
         String courseNameShort =  textViewCours2.getText().toString();
         TextView textViewCours3 = (TextView) findViewById(R.id.editCourse3);
         String courseIubhId =  textViewCours3.getText().toString();
+        String courseIubhId2 = courseIubhId.replace("IU:", "");
+
 
         TextView textViewCours4 = (TextView) findViewById(R.id.editCourse4);
         String courseSem = textViewCours4.getText().toString();
@@ -102,7 +104,7 @@ public class CourseEdit extends AppCompatActivity {
             newCourse.setCourseID(Integer.parseInt(courseID2));
             newCourse.setCourseNo(Integer.parseInt(courseNo2));
             newCourse.setCourseNameShort(courseNameShort);
-            newCourse.setCourseIubhId(courseIubhId);
+            newCourse.setCourseIubhId(courseIubhId2);
             newCourse.setCourseSem(Integer.parseInt(courseSem2));
             newCourse.setCourseNameLong(courseNameLong);
 

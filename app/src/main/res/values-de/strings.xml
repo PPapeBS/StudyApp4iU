@@ -84,6 +84,7 @@
     <string name="buttonCreateLessons">Lerneinheit erstellen</string>
     <string name="buttonEndLessons">Lerneinheit beenden</string>
     <string name="buttonTimerStart">Start</string>
-    <string name="buttonTimerStop">Stop</string>
+    <string name="buttonTimerStop">Pause</string>
+    <string name="buttonTimerReset">zurücksetzen</string>
 
 </resources>
