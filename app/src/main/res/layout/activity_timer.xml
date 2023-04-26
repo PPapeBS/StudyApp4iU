@@ -54,6 +54,11 @@
         android:textAlignment="center"
         android:textColor="@color/white" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:text="" />
+
     <Button
         android:id="@+id/buttonselectCourse"
         android:layout_width="match_parent"
@@ -63,6 +68,10 @@
         android:onClick="onClickSelectCourse"
         android:text="@string/buttonSelectCourse"
         android:textSize="23sp"        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:text="" />
 
     <Spinner
         android:id="@+id/spinnerSelectLesson"
@@ -77,6 +86,10 @@
         android:textColor="@color/white" />
 
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:text="" />
 
 
 
@@ -93,6 +106,10 @@
         android:textColor="@color/white"
         android:textSize="23sp" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:text="" />
 
     <Button
         android:id="@+id/Button4"

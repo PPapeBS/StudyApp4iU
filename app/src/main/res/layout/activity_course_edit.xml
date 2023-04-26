@@ -126,16 +126,16 @@
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:background="#009688"
-        android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMPFür Mathematik gibt es keine allgemein anerkannte Definition; heute wird sie üblicherweise als eine Wissenschaft beschrieben"
         android:gravity="center"
+        android:text="TEMPFür Mathematik gibt es keine allgemein anerkannte Definition; heute wird sie üblicherweise als eine Wissenschaft beschrieben"
         android:textAlignment="center"
-        android:textSize="17sp"        />
+        android:textColor="@color/white"
+        android:textSize="17sp" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="10dp"
         android:text="" />
 
     />

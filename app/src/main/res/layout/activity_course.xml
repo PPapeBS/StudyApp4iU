@@ -155,9 +155,9 @@
     <ListView
         android:id="@+id/listViewCourses"
         android:layout_width="match_parent"
-        android:clickable="false"
         android:layout_height="300dp"
         android:background="#009688"
+        android:clickable="false"
         android:fontFamily="monospace"
         android:gravity="center"
         android:textAlignment="center"

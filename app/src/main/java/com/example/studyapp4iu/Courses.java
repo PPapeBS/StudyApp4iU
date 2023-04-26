@@ -151,6 +151,7 @@ protected void onStart () {
         listViewCourses.setAdapter(listViewAdapter);
     }
 
+
 }
 
 
@@ -209,12 +210,16 @@ Log.d("##Debug Listensortierung NACHHER##", "Der Wert von CourseListArray ist:" 
 
     }
 
-
+//Funktion nicht fehlerfrei deswegen deaktiviert
+    /*
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         finish();
     }
+
+
+     */
 
 
 }

@@ -28,8 +28,9 @@
 
 
     <!--Text im Kursmenu    -->
-    <string name="buttonAddCourse">+ Add new course</string>
-    <string name="buttonAddCourse2">Add new course</string>
+    <string name="buttonAddCourse">+ Add course</string>
+    <string name="buttonAddCourse2">Add course</string>
+    <string name="buttonAddCourse3">+ Add course</string>
     <string name="buttonAddDummyCourses">+ Add Dummy courses</string>
     <string name="buttonDeleteCourse">Delete course</string>
     <string name="buttonDeletCourse2">Course deleted</string>

@@ -211,11 +211,24 @@ Log.d("##Debug onResume##", "Der Wert von LessonListArrayReduziert ist:" + Array
                 ;
     }
 
+//Buttonfunktion für AddNewCourses
+
+    public void onClickAddCourse(View button) {
+//Seitenwechsel Kurse hinzufügen
+        Intent changeIntent = new Intent(Lesson.this, CourseAdd.class);
+        startActivity(changeIntent);
+
+    }
+
+//Funktion nicht fehlerfrei deswegen deaktiviert
+    /*
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         finish();
     }
+
+     */
 
 
 

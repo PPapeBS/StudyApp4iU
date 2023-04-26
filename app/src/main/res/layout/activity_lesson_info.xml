@@ -117,7 +117,7 @@
     <TextView
         android:id="@+id/textViewLesson5"
         android:layout_width="match_parent"
-        android:layout_height="184dp"
+        android:layout_height="250dp"
         android:background="#00BCD4"
         android:fontFamily="monospace"
         android:gravity="center"
@@ -126,10 +126,7 @@
         android:textColor="@color/white"
         android:textSize="23sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:text="" />
+
 
 
     </LinearLayout>

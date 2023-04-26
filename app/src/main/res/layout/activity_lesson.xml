@@ -61,22 +61,42 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="5dp"
         android:text="" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:orientation="horizontal">
 
     <Button
         android:id="@+id/buttonSelectCourse"
-        android:layout_width="match_parent"
+        android:layout_width="296dp"
         android:layout_height="92dp"
         android:backgroundTint="#009688"
         android:fontFamily="monospace"
         android:onClick="onClickSelectCourse"
         android:text="@string/buttonSelectCourse"
-        android:textSize="23sp"        />
+        android:textSize="23sp" />
 
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="92dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/buttonAddCourse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#009688"
+            android:fontFamily="monospace"
+            android:onClick="onClickAddCourse"
+            android:text="@string/buttonAddCourse3"
+            android:textSize="13sp" />
+
+    </LinearLayout>
     <Space
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="5dp"
         android:text="" />
     <Spinner
         android:id="@+id/spinnerLesson"
@@ -135,9 +155,9 @@
     <ListView
         android:id="@+id/listViewLesson"
         android:layout_width="match_parent"
-        android:clickable="false"
-        android:layout_height="180dp"
+        android:layout_height="175dp"
         android:background="#00BCD4"
+        android:clickable="false"
         android:fontFamily="monospace"
         android:gravity="center"
         android:textAlignment="center"

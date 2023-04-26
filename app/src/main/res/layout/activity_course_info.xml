@@ -117,19 +117,14 @@ tools:context=".CourseInfo">
     <TextView
         android:id="@+id/textViewCours5"
         android:layout_width="match_parent"
-        android:layout_height="184dp"
+        android:layout_height="246dp"
         android:background="#009688"
-        android:textColor="@color/white"
         android:fontFamily="monospace"
-        android:text="TEMP Kursbeschreibung: Betriebswirtschaftslehre einführung"
         android:gravity="center"
+        android:text="TEMP Kursbeschreibung: Betriebswirtschaftslehre einführung"
         android:textAlignment="center"
-        android:textSize="17sp"        />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
+        android:textColor="@color/white"
+        android:textSize="17sp" />
 
 
 </LinearLayout>

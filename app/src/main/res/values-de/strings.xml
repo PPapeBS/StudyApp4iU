@@ -27,8 +27,10 @@
     <string name="headlineTimer">Timer</string>
 
     <!--Text im Kursmenu    -->
-    <string name="buttonAddCourse">+ Neuen Kurs hinzufügen</string>
-    <string name="buttonAddCourse2">Neuen Kurs hinzufügen</string>
+    <string name="buttonAddCourse">+ Kurs hinzufügen</string>
+    <string name="buttonAddCourse2">Kurs hinzufügen</string>
+    <string name="buttonAddCourse3">+ Kurs </string>
+
     <string name="buttonAddDummyCourses">+ Dummy Kurse hinzufügen</string>
     <string name="buttonDeleteCourse">Kurs löschen</string>
     <string name="buttonDeletCourse2">Kurs gelöschen</string>

@@ -233,10 +233,7 @@
             android:text="@string/buttonAddCourse2"
             android:textSize="23sp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:text="" />
+
 
         <Button
             android:id="@+id/changeAddTemp"
@@ -249,5 +246,8 @@
             android:textColor="@color/black"
             android:textSize="13sp" />
 
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:text="" />
 </LinearLayout>

@@ -243,17 +243,17 @@
             android:text="" />
 
 
-        <Button
-            android:id="@+id/changeAddLesson"
-            android:layout_width="match_parent"
-            android:layout_height="92dp"
-            android:backgroundTint="#FFCA28"
-            android:fontFamily="monospace"
-            android:onClick="onClickAddLesson"
-            android:text="@string/buttonAddLessons2"
-            android:textSize="23sp" />
+    <Button
+        android:id="@+id/changeAddLesson"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:backgroundTint="#FFCA28"
+        android:fontFamily="monospace"
+        android:onClick="onClickAddLesson"
+        android:text="@string/buttonAddLessons2"
+        android:textSize="23sp" />
 
-        <Space
+    <Space
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:text="" />
