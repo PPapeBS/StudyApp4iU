@@ -132,10 +132,18 @@ public class LessonAdd extends AppCompatActivity {
 
         Lesson.lessonListeArray.add(newLesson);
 
+        //Ausgabe Toast  Lerneinheiten hinzugefügt
+        Toast.makeText(LessonAdd.this,
+                R.string.buttonAddLessons3,
+                Toast.LENGTH_LONG ).show();
+
 
 //Seitenwechsel auf Kurse zurück
+        /*
         Intent changeIntent = new Intent(LessonAdd.this, Lesson.class);
         startActivity(changeIntent);
+
+         */
     }
 
 //DummyLesson hinzufügen
@@ -148,9 +156,18 @@ public class LessonAdd extends AppCompatActivity {
         lesson4.setLessonNo((lessonCourseNo));
         Lesson.lessonListeArray.add(lesson4);
 
-//Seitenwechsel auf Kurse zurück
+        //Ausgabe Toast Dummy Lerneinheiten hinzugefügt
+        Toast.makeText(LessonAdd.this,
+                R.string.buttonAddDummyLessons2,
+                Toast.LENGTH_LONG ).show();
+
+//Seitenwechsel auf Lerneinheiten zurück
+        /*
         Intent changeIntent = new Intent(LessonAdd.this, Lesson.class);
         startActivity(changeIntent);
+
+
+         */
     }
 
 

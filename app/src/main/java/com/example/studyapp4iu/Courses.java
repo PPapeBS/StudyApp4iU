@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -17,6 +18,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class Courses extends AppCompatActivity {
 
@@ -108,8 +110,27 @@ public class Courses extends AppCompatActivity {
 
 //Array Adapter für Kursauswahl oben
         if(courseListeArray.size() > 0){
+            ArrayAdapter<Courses> adapter = new ArrayAdapter<Courses>(this, android.R.layout.simple_spinner_item, courseListeArray){
+//  überschreiben der Methode, zur Anzeige des Spinnertextes
+                @Override
+                public View getDropDownView(int position, View convertView, ViewGroup parent){
+                    View view = super.getDropDownView(position, convertView, parent);
+                    TextView tv = (TextView) view;
+                    String courseName = getItem(position).getCourseNameShort();
+                    tv.setText(courseName);
+                    return view;
+                }
 
-            ArrayAdapter<Courses> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
+// Überschreiben der Methode, die den angezeigten Text des ausgewählten Elements festlegt
+                @Override
+                public View getView(int position, View convertView, ViewGroup parent) {
+                    View view = super.getView(position, convertView, parent);
+                    TextView tv = (TextView) view;
+                    String courseName = getItem(position).getCourseNameShort();
+                    tv.setText(courseName);
+                    return view;
+                }
+            };
 
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerCourses.setAdapter(adapter);
@@ -118,8 +139,10 @@ public class Courses extends AppCompatActivity {
 //ÜBERGABE des Ausgewählten Objekt an die InfoView-Ansicht von Kurse
         spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-               courseUebergabe = adapterView.getItemAtPosition(i).toString();
+           public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                courseUebergabe = adapterView.getItemAtPosition(i).toString();
+
+
 
 
             }
@@ -149,14 +172,11 @@ protected void onStart () {
         ArrayAdapter<String> listViewAdapter =
                 new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,courseListeArray);
         listViewCourses.setAdapter(listViewAdapter);
+
     }
 
 
 }
-
-
-
-
 
 
 
@@ -206,20 +226,17 @@ Log.d("##Debug Listensortierung VORHER##", "Der Wert von CourseListArray ist:" +
 Log.d("##Debug Listensortierung NACHHER##", "Der Wert von CourseListArray ist:" + Arrays.toString(Courses.courseListeArray.toArray()));
         recreate();
 
-
-
     }
 
-//Funktion nicht fehlerfrei deswegen deaktiviert
-    /*
+//Zurückbutton Funktion nicht fehlerfrei deswegen deaktiviert
+//Wenn neue MainActivity gestartet wird, werden die DummyObjekt erneut generiert, weil sie in der MainActivity und nicht einer SingleTone bzw. Datenbank geladen werden.
+/*
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent changeIntent = new Intent(this, MainActivity.class);
+        startActivity(changeIntent);
         finish();
     }
-
-
-     */
-
+*/
 
 }

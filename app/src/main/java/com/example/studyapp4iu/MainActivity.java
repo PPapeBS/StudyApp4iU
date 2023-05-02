@@ -22,7 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 //Erzeugen von Dummy Objekte für Kurse, Lessons, Zeiteinheiten
-// Legt Kursobjekt an.
+// Legt Kursobjekt an, aber nur wenn die Activity noch nie aufgerufen wurde
+
+        if (savedInstanceState == null) {
+        //Erzeugen von Dummy Objekte für Kurse, Lessons, Zeiteinheiten
+        // Legt Kursobjekt an.
+
         Courses bwl= new Courses(1000, 1, "BWL","Betriebswirtschaft 1","BBWL01",1);
         Courses.courseListeArray.add(bwl);
         Courses java= new Courses(1001, 2, "JAVA","Einführung in die Programmierung mit Java","IOBP01",2);
@@ -37,11 +42,9 @@ public class MainActivity extends AppCompatActivity {
         Lesson.lessonListeArray.add(lesson2);
         Lesson lesson3 =new Lesson(5002, 3, "Grundgesetz", 1002, 99, true);
         Lesson.lessonListeArray.add(lesson3);
+        }
 
-
-
-
-    };
+    }
 
     public void onClickButton(View button) {
         Toast.makeText(MainActivity.this,

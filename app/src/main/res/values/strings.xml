@@ -31,7 +31,11 @@
     <string name="buttonAddCourse">+ Add course</string>
     <string name="buttonAddCourse2">Add course</string>
     <string name="buttonAddCourse3">+ Add course</string>
+    <string name="buttonAddCourse4">Course added</string>
+
     <string name="buttonAddDummyCourses">+ Add Dummy courses</string>
+    <string name="buttonAddDummyCourses2">Dummy course added</string>
+
     <string name="buttonDeleteCourse">Delete course</string>
     <string name="buttonDeletCourse2">Course deleted</string>
     <string name="buttonChangeCourse">save course</string>
@@ -59,7 +63,9 @@
     <string name="buttonSelectCourse">Select course</string>
     <string name="requestSelectCourse">Please select course</string>
     <string name="buttonAddLessons">+ Add lesson</string>
+    <string name="buttonAddLessons3">lesson added</string>
     <string name="buttonAddDummyLessons">+ Add Dummy lessons</string>
+    <string name="buttonAddDummyLessons2">Dummy lesson added</string>
     <string name="buttonChangeLessons">Modify lesson</string>
     <string name="buttonChangeLessons2">Lesson saved</string>
     <string name="buttonDeletLessons">Delete lesson</string>

@@ -76,10 +76,18 @@ public class CourseAdd extends AppCompatActivity {
 
         Courses.courseListeArray.add(newCourse);
 
+//Ausgabe Toast Kurs hinzugefügt
+        Toast.makeText(CourseAdd.this,
+                R.string.buttonAddCourse4,
+                Toast.LENGTH_LONG ).show();
 
 //Seitenwechsel auf Kurse zurück
+        /*
         Intent changeIntent = new Intent(CourseAdd.this, Courses.class);
         startActivity(changeIntent);
+
+         */
+
     }
 //Dummykurs hinzufügen
         public void onClickAddCourseDummy (View button){
@@ -91,17 +99,18 @@ public class CourseAdd extends AppCompatActivity {
             mathe.setCourseNo(matheCourseNo);
             Courses.courseListeArray.add(mathe);
 
+//Ausgabe Toast Dummy Kurs hinzugefügt
+            Toast.makeText(CourseAdd.this,
+                    R.string.buttonAddDummyCourses2,
+                    Toast.LENGTH_LONG ).show();
+
 
 //Seitenwechsel auf Kurse zurück
+           /*
             Intent changeIntent = new Intent(CourseAdd.this, Courses.class);
             startActivity(changeIntent);
+           */
+
         }
-
-
-
-
-
-
-
 
 }

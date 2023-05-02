@@ -193,7 +193,7 @@
         android:id="@+id/spinnerSelectCourse"
         android:layout_width="match_parent"
         android:layout_height="92dp"
-        android:background="#00BCD4"
+        android:background="#009688"
         android:clickable="true"
         android:fontFamily="monospace"
         android:gravity="center"

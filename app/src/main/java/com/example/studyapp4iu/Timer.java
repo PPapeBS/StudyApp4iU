@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -40,13 +41,37 @@ public class Timer extends AppCompatActivity {
 //Array Adapter für Kursauswahl oben innerhalb von dem Timer
         if (Courses.courseListeArray.size() > 0) {
 
-            ArrayAdapter<Courses> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Courses.courseListeArray);
+
+            ArrayAdapter<Courses> adapter = new ArrayAdapter<Courses>(this, android.R.layout.simple_spinner_item, Courses.courseListeArray){
+                //  überschreiben der Methode, zur Anzeige des Spinnertextes
+                @Override
+                public View getDropDownView(int position, View convertView, ViewGroup parent){
+                    View view = super.getDropDownView(position, convertView, parent);
+                    TextView tv = (TextView) view;
+                    String courseName = getItem(position).getCourseNameShort();
+                    tv.setText(courseName);
+                    return view;
+                }
+
+                // Überschreiben der Methode, die den angezeigten Text des ausgewählten Elements festlegt
+                @Override
+                public View getView(int position, View convertView, ViewGroup parent) {
+                    View view = super.getView(position, convertView, parent);
+                    TextView tv = (TextView) view;
+                    String courseName = getItem(position).getCourseNameShort();
+                    tv.setText(courseName);
+                    return view;
+                }
+            };
+
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerCourses.setAdapter(adapter);
         }
+
+
+
+
     }
-
-
 
 
 @Override

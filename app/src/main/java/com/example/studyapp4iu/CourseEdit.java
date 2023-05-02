@@ -123,8 +123,10 @@ public class CourseEdit extends AppCompatActivity {
             Log.d("#####Debug on EditKurs#####", "Inhalt von courseListeArray in CoursEdit:" +"\n" + Arrays.toString(Courses.courseListeArray.toArray()));
 
 //Seitenwechsel auf Kurse zurück
+        /*
             Intent changeIntent = new Intent(CourseEdit.this, Courses.class);
             startActivity(changeIntent);
+         */
 
 }
 

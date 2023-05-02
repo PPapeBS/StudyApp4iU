@@ -111,8 +111,11 @@ public class LessonEdit extends AppCompatActivity {
             }
 
 //Seitenwechsel auf Kurse zurück
+            /*
             Intent changeIntent = new Intent(LessonEdit.this, Lesson.class);
             startActivity(changeIntent);
+
+             */
         }
     }
 
@@ -163,9 +166,12 @@ public class LessonEdit extends AppCompatActivity {
 //        Log.d("#####Debug on EditLesson#####", "Inhalt von lessonListeArray in LessonEdit:" + Arrays.toString(Lesson.lessonListeArray.toArray()));
 
 //Seitenwechsel auf Kurse zurück
+        /*
         Intent changeIntent = new Intent(LessonEdit.this, Lesson.class);
         startActivity(changeIntent);
 
+
+         */
     }
 
 
